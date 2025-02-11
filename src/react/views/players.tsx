@@ -13,15 +13,20 @@ import React from 'react';
 import { BsCheck, BsX } from 'react-icons/bs';
 import { useAutoRefetch } from '../../hooks/useAutoRefetch';
 import { EndpointEnum } from '../../enums/endpoint.enum';
-import { PlayerDto } from '../../types/apis/dataTransferObject/playerDto';
+import { InventoryEntity, PlayerDto } from '../../types/apis/dataTransferObject/playerDto';
 import { PlayerFm } from '../../types/apis/frontModel/playerFm';
 import { playerMap } from '../../constants/playerMap';
+import { getImageHelper } from '../../helpers/getImage.helper';
 
 export const Players: React.FC = () => {
     const { data: players } = useAutoRefetch<PlayerDto[], PlayerFm[]>(EndpointEnum.PLAYER);
 
     const getPlayerName = (id: string) => {
         return playerMap[id as keyof typeof playerMap] || 'Unknown Player';
+    };
+
+    const getTotalInventoryAmount = (inventory: InventoryEntity[] | null | undefined): number => {
+        return inventory?.reduce((total, item) => total + item.Amount, 0) || 0;
     };
 
     return (
@@ -46,10 +51,27 @@ export const Players: React.FC = () => {
                                     <Grid container spacing={2} alignItems="center">
                                         <Grid xs>
                                             <Grid container alignItems="center">
-                                                <Typography level="h4">
+                                                <Typography level="h3" sx={{ marginRight: '12px' }}>
                                                     {getPlayerName(player.id.toString())}
                                                 </Typography>
-                                                <Typography level="body-md">Heath</Typography>
+                                                <Typography
+                                                    level="body-md"
+                                                    sx={{ marginLeft: '12px' }}
+                                                >
+                                                    Health
+                                                </Typography>
+                                                <Typography
+                                                    level="body-sm"
+                                                    sx={{ marginLeft: '4px', marginBottom: '1px' }}
+                                                >
+                                                    ({player.playerHP.toFixed(0)}%)
+                                                </Typography>
+                                                <LinearProgress
+                                                    determinate
+                                                    value={player.playerHP}
+                                                    color="primary"
+                                                    sx={{ marginLeft: '8px', marginBottom: '1px' }}
+                                                />
                                             </Grid>
                                         </Grid>
                                         <Grid>
@@ -73,20 +95,8 @@ export const Players: React.FC = () => {
                                         </Grid>
                                     </Grid>
 
-                                    {/* Player Health Bar */}
-                                    <Box sx={{ marginTop: '10px' }}>
-                                        <Typography level="body-md">
-                                            Health: {player.playerHP}%
-                                        </Typography>
-                                        <LinearProgress
-                                            determinate
-                                            value={player.playerHP}
-                                            color="primary"
-                                        />
-                                    </Box>
-
                                     {/* Player Location */}
-                                    <Box sx={{ marginTop: '10px' }}>
+                                    {/* <Box sx={{ marginTop: '10px' }}>
                                         <Typography level="body-md">
                                             Location: ({player.location.x.toFixed(2)},{' '}
                                             {player.location.y.toFixed(2)},{' '}
@@ -95,46 +105,67 @@ export const Players: React.FC = () => {
                                         <Typography level="body-md">
                                             Rotation: {player.location.rotation.toFixed(2)}°
                                         </Typography>
-                                    </Box>
+                                    </Box> */}
 
-                                    {/* Last Online Timestamp */}
-                                    {!player.online && (
-                                        <Box sx={{ marginTop: '10px' }}>
-                                            <Typography level="body-md" color="neutral">
-                                                Last Online: {new Date().toLocaleString()}
+                                    <Box sx={{ marginTop: '20px' }}>
+                                        <Grid container alignItems="center">
+                                            <Typography fontWeight={600}>Inventory</Typography>
+                                            <Typography level="body-sm" sx={{ marginLeft: '4px' }}>
+                                                (
+                                                {getTotalInventoryAmount(
+                                                    player.inventory
+                                                ).toLocaleString()}
+                                                )
                                             </Typography>
+                                        </Grid>
+                                        <Box
+                                            sx={{
+                                                maxHeight: '235px',
+                                                overflowY: 'auto'
+                                            }}
+                                        >
+                                            <Table>
+                                                <thead>
+                                                    <tr>
+                                                        <th>Item</th>
+                                                        <th>Amount</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {player.inventory?.map((item, index) => (
+                                                        <tr key={index}>
+                                                            <td>
+                                                                <Box
+                                                                    sx={{
+                                                                        display: 'flex',
+                                                                        alignItems: 'center'
+                                                                    }}
+                                                                >
+                                                                    <img
+                                                                        src={
+                                                                            getImageHelper(
+                                                                                item.ClassName
+                                                                            ) ?? null
+                                                                        }
+                                                                        alt="Satisfactory item illustration"
+                                                                        onError={(e) => {
+                                                                            e.currentTarget.src = `/assets/Icon/notFound.png`;
+                                                                        }}
+                                                                        style={{
+                                                                            height: '24px',
+                                                                            width: '24px',
+                                                                            marginRight: '8px'
+                                                                        }}
+                                                                    />
+                                                                    {item.Name}
+                                                                </Box>
+                                                            </td>
+                                                            <td>{item.Amount}</td>
+                                                        </tr>
+                                                    ))}
+                                                </tbody>
+                                            </Table>
                                         </Box>
-                                    )}
-
-                                    {/* Player Inventory */}
-                                    <Box sx={{ marginTop: '20px' }}>
-                                        <Typography fontWeight={600}>Inventory</Typography>
-                                        <Table>
-                                            {/* <Thead>
-                        <Tr>
-                          <Th>Item</Th>
-                          <Th>Amount</Th>
-                          <Th>Max</Th>
-                        </Tr>
-                      </Thead>
-                      <Tbody>
-                        {player.inventory?.map((item, index) => (
-                          <Tr key={index}>
-                            <Td>{item.Name}</Td>
-                            <Td>{item.Amount}</Td>
-                            <Td>{item.MaxAmount}</Td>
-                          </Tr>
-                        ))}
-                      </Tbody> */}
-                                        </Table>
-                                    </Box>
-
-                                    {/* Player Equipment Placeholder */}
-                                    <Box sx={{ marginTop: '20px' }}>
-                                        <Typography fontWeight={600}>Equipment</Typography>
-                                        <Typography level="body-md">
-                                            (Not yet implemented)
-                                        </Typography>
                                     </Box>
                                 </CardContent>
                             </Card>

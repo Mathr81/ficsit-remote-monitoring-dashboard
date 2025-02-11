@@ -1,7 +1,7 @@
 import { Box, Button, Divider, Grid, IconButton, Stack, Tooltip, Typography } from '@mui/joy';
 import React, { type ReactElement, useState } from 'react';
 import { BsGearFill, BsGridFill, BsLightningFill, BsList, BsPerson } from 'react-icons/bs';
-import { FaBoxes, FaCloud, FaTruck, FaUser } from 'react-icons/fa';
+import { FaBoxes, FaCloud, FaMap, FaTruck, FaUser } from 'react-icons/fa';
 import { GiFactory } from 'react-icons/gi';
 import { MdTrain } from 'react-icons/md';
 import { RiCoupon2Fill } from 'react-icons/ri';
@@ -79,6 +79,12 @@ export const Sidebar: React.FC = () => {
                 label: 'Awesome Sink',
                 icon: <RiCoupon2Fill />,
                 isDisabled: false
+            },
+            {
+                path: '/map',
+                label: 'Map',
+                icon: <FaMap />,
+                isDisabled: false
             }
         ],
         [
@@ -119,7 +125,7 @@ export const Sidebar: React.FC = () => {
                             </IconButton>
                         </Grid>
                         <Grid xs>
-                            <Typography level="h4">FRM Dashboard</Typography>
+                            <Typography level="h4">Steelport</Typography>
                         </Grid>
                     </Grid>
                 ) : (

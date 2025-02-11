@@ -13,7 +13,8 @@ import {
     GiMineTruck,
     GiPerson,
     GiPowerGenerator,
-    GiSunCloud
+    GiSunCloud,
+    GiTreasureMap
 } from 'react-icons/gi';
 import { TbTrain } from 'react-icons/tb';
 import { Link } from 'react-router-dom';
@@ -122,6 +123,9 @@ const SearchAppBar: React.FC = () => {
                             to="/cloudView"
                         >
                             <Button startIcon={<GiSunCloud />}>Cloud View</Button>
+                        </Link>
+                        <Link style={{ textDecoration: 'none', marginRight: '10px' }} to="/map">
+                            <Button startIcon={<GiTreasureMap />}>Map</Button>
                         </Link>
                     </Stack>
 

@@ -22,6 +22,10 @@ import type { VehicleFm } from '../../types/apis/frontModel/vehicleFm';
 export const Vehicles: React.FC = () => {
     const { data: vehicles } = useAutoRefetch<VehicleDto[], VehicleFm[]>(EndpointEnum.VEHICLE);
 
+    const convertKMHtoMPH = (kmh: number) => {
+        return (kmh * 0.621371).toFixed(2);
+    };
+
     return (
         <Container sx={{ paddingTop: '50px' }}>
             <Card variant="outlined" sx={{ paddingBottom: '0px', marginBottom: '30px' }}>
@@ -61,7 +65,11 @@ export const Vehicles: React.FC = () => {
                                             }}
                                         >
                                             <CardContent>
-                                                <Grid container spacing={4} sx={{ paddingX: 0 }}>
+                                                <Grid
+                                                    container
+                                                    spacing={2}
+                                                    sx={{ paddingY: '12px' }}
+                                                >
                                                     <Grid>
                                                         <img
                                                             src={`/assets/Vehicle/${vehicle.name}.png`}
@@ -108,7 +116,9 @@ export const Vehicles: React.FC = () => {
                                                         <Typography
                                                             sx={{ color: 'rgba(255,255,255,0.9)' }}
                                                         >
-                                                            Speed: {vehicle.speed.toFixed(2)} km/h
+                                                            Speed:{' '}
+                                                            {convertKMHtoMPH(vehicle.speed / 30)}{' '}
+                                                            mph
                                                         </Typography>
                                                     </Grid>
                                                 </Grid>
@@ -224,7 +234,11 @@ export const Vehicles: React.FC = () => {
                                                         </Grid>
                                                     </Grid>
                                                 </Box>
-                                                <Typography marginLeft="5px" level="body-md">
+                                                <Typography
+                                                    marginLeft="5px"
+                                                    marginTop="5px"
+                                                    level="body-md"
+                                                >
                                                     VehicleID: #{vehicle.id}
                                                 </Typography>
                                             </Stack>
@@ -247,7 +261,10 @@ export const Vehicles: React.FC = () => {
                                                                     color: 'rgba(255,255,255,0.9)'
                                                                 }}
                                                             >
-                                                                {vehicle.speed / 30} km/h
+                                                                {convertKMHtoMPH(
+                                                                    vehicle.speed / 30
+                                                                )}{' '}
+                                                                mph
                                                             </Typography>
                                                         </Grid>
                                                     </Grid>
@@ -332,13 +349,21 @@ export const Vehicles: React.FC = () => {
                                                                     alt="Satisfactory Tractor fuel illustration"
                                                                     style={{
                                                                         height: '30px',
-                                                                        width: '30px'
+                                                                        width: '30px',
+                                                                        marginTop: '5px',
+                                                                        marginBottom: '5px',
+                                                                        marginRight: '-4px'
                                                                     }}
                                                                 />
                                                             ) : (
                                                                 <BsXCircle
                                                                     color="red"
-                                                                    size="25px"
+                                                                    size="20px"
+                                                                    style={{
+                                                                        marginTop: '5px',
+                                                                        marginBottom: '5px',
+                                                                        marginRight: '-4px'
+                                                                    }}
                                                                 />
                                                             )}
                                                         </Grid>
@@ -448,7 +473,11 @@ export const Vehicles: React.FC = () => {
                                                         </Grid>
                                                     </Grid>
                                                 </Box>
-                                                <Typography marginLeft="5px" level="body-md">
+                                                <Typography
+                                                    marginLeft="5px"
+                                                    marginTop="5px"
+                                                    level="body-md"
+                                                >
                                                     VehicleID: #{vehicle.id}
                                                 </Typography>
                                             </Stack>
@@ -478,7 +507,10 @@ export const Vehicles: React.FC = () => {
                                                                         color: 'rgba(255,255,255,0.9)'
                                                                     }}
                                                                 >
-                                                                    {vehicle.speed / 30} km/h
+                                                                    {convertKMHtoMPH(
+                                                                        vehicle.speed / 30
+                                                                    )}{' '}
+                                                                    mph
                                                                 </Typography>
                                                                 {vehicle.speed === 0 &&
                                                                     Math.max(0, vehicle.engineRPM) >
@@ -536,7 +568,13 @@ export const Vehicles: React.FC = () => {
                                                                     color: 'rgba(255,255,255,0.9)'
                                                                 }}
                                                             >
-                                                                {Math.max(0, vehicle.engineRPM)} RPM
+                                                                {Math.max(
+                                                                    0,
+                                                                    parseFloat(
+                                                                        vehicle.engineRPM.toFixed(2)
+                                                                    )
+                                                                )}{' '}
+                                                                RPM
                                                             </Typography>
                                                         </Grid>
                                                     </Grid>
@@ -577,13 +615,21 @@ export const Vehicles: React.FC = () => {
                                                                     alt="Satisfactory Tractor fuel illustration"
                                                                     style={{
                                                                         height: '30px',
-                                                                        width: '30px'
+                                                                        width: '30px',
+                                                                        marginTop: '5px',
+                                                                        marginBottom: '5px',
+                                                                        marginRight: '-4px'
                                                                     }}
                                                                 />
                                                             ) : (
                                                                 <BsXCircle
                                                                     color="red"
                                                                     size="25px"
+                                                                    style={{
+                                                                        marginTop: '5px',
+                                                                        marginBottom: '5px',
+                                                                        marginRight: '-4px'
+                                                                    }}
                                                                 />
                                                             )}
                                                         </Grid>
