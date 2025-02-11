@@ -17,17 +17,30 @@ export const CloudView: React.FC = () => {
 
     const handlePrepareItems = useCallback(() => {
         const temp: ItemData[] = [];
+        const storedData = localStorage.getItem('ITEM_CLASSNAME-amounts');
+        const amountsHistory = storedData ? JSON.parse(storedData) : {};
 
         cloudInv?.forEach((item) => {
-            temp.push(item);
+            const lastAmount = amountsHistory[item.className] || 0;
+            let direction: 'up' | 'down' | 'equal' = 'equal';
+
+            if (item.amount > lastAmount) {
+                direction = 'up';
+            } else if (item.amount < lastAmount) {
+                direction = 'down';
+            }
+
+            amountsHistory[item.className] = item.amount;
+            temp.push({ ...item, direction });
         });
 
+        localStorage.setItem('ITEM_CLASSNAME-amounts', JSON.stringify(amountsHistory));
         setItems(temp);
     }, [cloudInv]);
 
     const getItemCleanName = (name: string) => {
         return name.replace(/_/g, ' ');
-    }
+    };
 
     useEffect(() => {
         handlePrepareItems();
@@ -78,10 +91,23 @@ export const CloudView: React.FC = () => {
                                         {gameItemsDictionary[item.className] === undefined && (
                                             <HiOutlineQuestionMarkCircle size="70px" />
                                         )}
-                                        <Typography marginBottom="5px">{getItemCleanName(item.name)}</Typography>
+                                        <Typography marginBottom="5px">
+                                            {getItemCleanName(item.name)}
+                                        </Typography>
                                         <Typography level="body-md">
                                             Total: {item.amount}
                                         </Typography>
+                                        <Grid>
+                                            {item.direction === 'up' && (
+                                                <span style={{ color: 'green' }}>↑</span>
+                                            )}
+                                            {item.direction === 'down' && (
+                                                <span style={{ color: 'red' }}>↓</span>
+                                            )}
+                                            {item.direction === 'equal' && (
+                                                <span style={{ color: 'orange' }}>—</span>
+                                            )}
+                                        </Grid>
                                     </CardContent>
                                 </Card>
                             </Grid>

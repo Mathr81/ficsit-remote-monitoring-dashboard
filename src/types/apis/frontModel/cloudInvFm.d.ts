@@ -5,4 +5,5 @@ export type CloudInvFm = {
     name: GameItemsEnum;
     className: GameClassNamesEnum;
     amount: number;
+    direction?: 'up' | 'down' | 'equal';
 };

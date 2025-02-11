@@ -23,21 +23,23 @@ const convertCoordinates = (x: number, y: number) => {
     };
 };
 
-const Controls: React.FC<{ zoomIn: () => void; zoomOut: () => void; resetTransform: () => void }> = ({ 
-    zoomIn, 
-    zoomOut, 
-    resetTransform 
-}) => {
+const Controls: React.FC<{
+    zoomIn: () => void;
+    zoomOut: () => void;
+    resetTransform: () => void;
+}> = ({ zoomIn, zoomOut, resetTransform }) => {
     return (
-        <Box sx={{ 
-            position: 'absolute', 
-            right: 10, 
-            top: 10, 
-            zIndex: 1,
-            display: 'flex',
-            flexDirection: 'column',
-            gap: 1
-        }}>
+        <Box
+            sx={{
+                position: 'absolute',
+                right: 10,
+                top: 10,
+                zIndex: 1,
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 1
+            }}
+        >
             <button
                 onClick={zoomIn}
                 style={{
@@ -80,9 +82,12 @@ const Controls: React.FC<{ zoomIn: () => void; zoomOut: () => void; resetTransfo
 
 export const Map: React.FC = () => {
     const [showDropPods, setShowDropPods] = useState<boolean>(false);
-    
+
     const { data: players } = useAutoRefetch<PlayerDto[], PlayerFm[]>(EndpointEnum.PLAYER);
-    const { data: dropPods } = useAutoRefetch<DropPodDto[], DropPodFm[]>(EndpointEnum.DROP_POD, !showDropPods);
+    const { data: dropPods } = useAutoRefetch<DropPodDto[], DropPodFm[]>(
+        EndpointEnum.DROP_POD,
+        !showDropPods
+    );
 
     return (
         <Container sx={{ paddingTop: '50px' }}>
@@ -106,12 +111,14 @@ export const Map: React.FC = () => {
 
             <Card>
                 <CardContent>
-                    <Box sx={{ 
-                        position: 'relative', 
-                        height: '1200px',
-                        overflow: 'hidden',
-                        borderRadius: '8px'
-                    }}>
+                    <Box
+                        sx={{
+                            position: 'relative',
+                            height: '1200px',
+                            overflow: 'hidden',
+                            borderRadius: '8px'
+                        }}
+                    >
                         <TransformWrapper
                             initialScale={1}
                             minScale={0.5}
@@ -157,7 +164,9 @@ export const Map: React.FC = () => {
                                                             width: 3,
                                                             height: 3,
                                                             borderRadius: '50%',
-                                                            backgroundColor: player.online ? 'green' : 'red',
+                                                            backgroundColor: player.online
+                                                                ? 'green'
+                                                                : 'red',
                                                             border: '0.1rem solid white',
                                                             transform: 'translate(-50%, -50%)',
                                                             ...dotPosition,
@@ -172,34 +181,35 @@ export const Map: React.FC = () => {
                                                 );
                                             })}
 
-                                            {showDropPods && dropPods?.map((dropPod, index) => {
-                                                const podPosition = convertCoordinates(
-                                                    dropPod.location.x,
-                                                    dropPod.location.y
-                                                );
+                                            {showDropPods &&
+                                                dropPods?.map((dropPod, index) => {
+                                                    const podPosition = convertCoordinates(
+                                                        dropPod.location.x,
+                                                        dropPod.location.y
+                                                    );
 
-                                                return (
-                                                    <Box
-                                                        key={index}
-                                                        sx={{
-                                                            position: 'absolute',
-                                                            width: 5,
-                                                            height: 5,
-                                                            borderRadius: '50%',
-                                                            backgroundColor: 'blue',
-                                                            border: '0.1rem solid white',
-                                                            transform: 'translate(-50%, -50%)',
-                                                            ...podPosition,
-                                                            '&:hover': {
-                                                                width: 10,
-                                                                height: 10,
-                                                                zIndex: 1
-                                                            }
-                                                        }}
-                                                        title={`Drop Pod ${index}`}
-                                                    />
-                                                );
-                                            })}
+                                                    return (
+                                                        <Box
+                                                            key={index}
+                                                            sx={{
+                                                                position: 'absolute',
+                                                                width: 5,
+                                                                height: 5,
+                                                                borderRadius: '50%',
+                                                                backgroundColor: 'blue',
+                                                                border: '0.1rem solid white',
+                                                                transform: 'translate(-50%, -50%)',
+                                                                ...podPosition,
+                                                                '&:hover': {
+                                                                    width: 10,
+                                                                    height: 10,
+                                                                    zIndex: 1
+                                                                }
+                                                            }}
+                                                            title={`Drop Pod ${index}`}
+                                                        />
+                                                    );
+                                                })}
                                         </Box>
                                     </TransformComponent>
                                 </>

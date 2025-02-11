@@ -45,9 +45,8 @@ export const StorageView: React.FC = () => {
     }, [worldInv, prodStats]);
 
     const getItemCleanName = (name: string) => {
-      return name.replace(/_/g, ' ');
-  }
-
+        return name.replace(/_/g, ' ');
+    };
 
     useEffect(() => {
         handlePrepareItems();
@@ -113,7 +112,9 @@ export const StorageView: React.FC = () => {
                                         {gameItemsDictionary[item.className] === undefined && (
                                             <HiOutlineQuestionMarkCircle size="70px" />
                                         )}
-                                        <Typography marginBottom="5px">{getItemCleanName(item.name)}</Typography>
+                                        <Typography marginBottom="5px">
+                                            {getItemCleanName(item.name)}
+                                        </Typography>
                                         <Typography level="body-md">
                                             Total: {item.amount}
                                         </Typography>

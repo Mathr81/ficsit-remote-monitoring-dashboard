@@ -1,12 +1,16 @@
 import { Box, Button, Divider, Grid, IconButton, Stack, Tooltip, Typography } from '@mui/joy';
-import React, { type ReactElement, useState } from 'react';
-import { BsGearFill, BsGridFill, BsLightningFill, BsList, BsPerson } from 'react-icons/bs';
+import React, { type ReactElement, useEffect, useState } from 'react';
+import { BsGearFill, BsGridFill, BsLightningFill, BsList } from 'react-icons/bs';
 import { FaBoxes, FaCloud, FaMap, FaTruck, FaUser } from 'react-icons/fa';
 import { GiFactory } from 'react-icons/gi';
 import { MdTrain } from 'react-icons/md';
 import { RiCoupon2Fill } from 'react-icons/ri';
 import { TbDrone } from 'react-icons/tb';
 import { Link } from 'react-router-dom';
+import { useAutoRefetch } from '../../hooks/useAutoRefetch';
+import { PlayerDto } from '../../types/apis/dataTransferObject/playerDto';
+import { PlayerFm } from '../../types/apis/frontModel/playerFm';
+import { EndpointEnum } from '../../enums/endpoint.enum';
 
 type LinksGroup = {
     path: string;
@@ -16,7 +20,16 @@ type LinksGroup = {
 };
 
 export const Sidebar: React.FC = () => {
-    const [isFullsize, setIsFullsize] = useState(false);
+    const [isPlayerOnline, setIsPlayerOnline] = useState(false);
+    const [isFullSize, setisFullSize] = useState(false);
+
+    const { data: players } = useAutoRefetch<PlayerDto[], PlayerFm[]>(EndpointEnum.PLAYER);
+
+    useEffect(() => {
+        if (players) {
+            setIsPlayerOnline(players.some((player) => !!player.online));
+        }
+    }, [players]);
 
     const linksGroup: LinksGroup[][] = [
         [
@@ -100,7 +113,7 @@ export const Sidebar: React.FC = () => {
     return (
         <Box
             sx={{
-                width: isFullsize ? '180px' : undefined,
+                width: isFullSize ? '180px' : undefined,
                 height: '100vh',
                 position: 'sticky',
                 top: '0px',
@@ -110,13 +123,13 @@ export const Sidebar: React.FC = () => {
                 padding: '12px'
             }}
         >
-            <Stack spacing={isFullsize ? 2 : 1}>
-                {isFullsize ? (
+            <Stack spacing={isFullSize ? 2 : 1}>
+                {isFullSize ? (
                     <Grid container display="flex" alignItems="center">
                         <Grid marginRight="6px">
                             <IconButton
                                 onClick={() => {
-                                    setIsFullsize(false);
+                                    setisFullSize(false);
                                 }}
                                 color="neutral"
                                 variant="plain"
@@ -133,7 +146,7 @@ export const Sidebar: React.FC = () => {
                         <IconButton
                             size="lg"
                             onClick={() => {
-                                setIsFullsize(true);
+                                setisFullSize(true);
                             }}
                             color="neutral"
                             variant="plain"
@@ -148,7 +161,7 @@ export const Sidebar: React.FC = () => {
                             <Divider />
                             {group.map((link) => {
                                 if (link.isDisabled) return null;
-                                if (isFullsize) {
+                                if (isFullSize) {
                                     return (
                                         <Link
                                             key={link.path}
@@ -175,6 +188,22 @@ export const Sidebar: React.FC = () => {
                                         <Link style={{ textDecoration: 'none' }} to={link.path}>
                                             <IconButton size="lg" color="neutral" variant="plain">
                                                 {link.icon}
+                                                {link.label === 'Players' && isPlayerOnline && (
+                                                    <span
+                                                        style={{
+                                                            position: 'absolute',
+                                                            top: '5px',
+                                                            right: '5px',
+                                                            height: '10px',
+                                                            width: '10px',
+                                                            backgroundColor: isPlayerOnline
+                                                                ? 'green'
+                                                                : 'red',
+                                                            borderRadius: '50%',
+                                                            display: 'inline-block'
+                                                        }}
+                                                    ></span>
+                                                )}
                                             </IconButton>
                                         </Link>
                                     </Tooltip>
