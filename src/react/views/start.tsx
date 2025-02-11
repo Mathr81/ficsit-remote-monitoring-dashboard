@@ -14,7 +14,7 @@ import Skeleton from "@mui/joy/Skeleton";
 import React, { useState } from "react";
 import { BsExclamationCircle, BsExclamationTriangleFill } from "react-icons/bs";
 
-import { gameItemsDictionnary } from "../../dictionaries/gameItems.dictionary";
+import { gameItemsDictionary } from "../../dictionaries/gameItems.dictionary";
 import { EndpointEnum } from "../../enums/endpoint.enum";
 import type { GameClassNamesEnum } from "../../enums/gameClassNames.enum";
 import { GameItemsCategoryEnum } from "../../enums/gameItemsCategory.enum";
@@ -47,7 +47,7 @@ export const Start: React.FC = () => {
     GameItems
   >(
     gameItemFilterHelper({
-      gameItemsDictionnary,
+      gameItemsDictionary,
       filter: GameItemsCategoryEnum.Resource,
     }),
   );

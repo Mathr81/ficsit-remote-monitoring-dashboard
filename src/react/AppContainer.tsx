@@ -16,6 +16,8 @@ import { Start } from "./views/start";
 import { StorageView } from "./views/storageView";
 import { Trains } from "./views/trains";
 import { Vehicles } from "./views/vehicles";
+import { CloudView } from "./views/cloudView";
+import { Players } from "./views/players";
 
 export const AppContainer: React.FC = () => {
   return (
@@ -36,6 +38,10 @@ export const AppContainer: React.FC = () => {
               <Route
                 path="/"
                 element={<Start />}
+              />
+              <Route
+                path="/players"
+                element={<Players />}
               />
               <Route
                 path="/power"
@@ -68,6 +74,10 @@ export const AppContainer: React.FC = () => {
               <Route
                 path="/storageView"
                 element={<StorageView />}
+              />
+              <Route
+                path="/cloudView"
+                element={<CloudView />}
               />
               <Route
                 path="/awesomeSink"

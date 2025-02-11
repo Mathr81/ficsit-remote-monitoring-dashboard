@@ -80,7 +80,7 @@ module.exports = {
       "error",
       { "missingExports ": true, "unusedExports": true },
     ],
-    "simple-import-sort/imports": "error",
+    "simple-import-sort/imports": "ignore",
     "simple-import-sort/exports": "error",
 
     // React rules

@@ -14,8 +14,9 @@ import {
   BsGridFill,
   BsLightningFill,
   BsList,
+  BsPerson,
 } from "react-icons/bs";
-import { FaBoxes, FaTruck } from "react-icons/fa";
+import { FaBoxes, FaCloud, FaTruck, FaUser } from "react-icons/fa";
 import { GiFactory } from "react-icons/gi";
 import { MdTrain } from "react-icons/md";
 import { RiCoupon2Fill } from "react-icons/ri";
@@ -38,6 +39,12 @@ export const Sidebar: React.FC = () => {
         path: "/",
         label: "Overview",
         icon: <BsGridFill />,
+        isDisabled: false,
+      },
+      {
+        path: "/players",
+        label: "Players",
+        icon: <FaUser />,
         isDisabled: false,
       },
       {
@@ -74,6 +81,12 @@ export const Sidebar: React.FC = () => {
         path: "/storageView",
         label: "Storage View",
         icon: <FaBoxes />,
+        isDisabled: false,
+      },
+      {
+        path: "/cloudView",
+        label: "Cloud View",
+        icon: <FaCloud />,
         isDisabled: false,
       },
       {

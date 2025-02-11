@@ -10,5 +10,5 @@ export type ProductionStatFm = {
   percentConsumption: number;
   maxProduction: number;
   maxConsumption: number;
-  productionPerMinunte: string;
+  productionPerMinute: string;
 };

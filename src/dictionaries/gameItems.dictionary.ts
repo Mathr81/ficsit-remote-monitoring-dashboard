@@ -4,9 +4,9 @@ import { GameClassNamesEnum } from "../enums/gameClassNames.enum";
 import { GameItemsEnum } from "../enums/gameItems.enum";
 import { GameItemsCategoryEnum } from "../enums/gameItemsCategory.enum";
 import { GameResourcesTypeEnum } from "../enums/gameResourcesType.enum";
-import type { GameItemsDictionnary } from "../types/gameItemsDictionary";
+import type { gameItemsDictionary } from "../types/gameItemsDictionary";
 
-export const gameItemsDictionnary: GameItemsDictionnary = {
+export const gameItemsDictionary: gameItemsDictionary = {
   // Raw resources items
   [GameClassNamesEnum.Desc_OreIron_C]: {
     name: GameItemsEnum.Iron_Ore,
@@ -4066,6 +4066,50 @@ export const gameItemsDictionnary: GameItemsDictionnary = {
   },
   [GameClassNamesEnum.SwatchDesc_Slot9_C]: {
     name: GameItemsEnum.SwatchDesc_Slot9_C,
+    category: GameItemsCategoryEnum.Default,
+  },
+  [GameClassNamesEnum.Desc_FF_CornSeed_C]: {
+    name: GameItemsEnum.Desc_FF_CornSeed_C,
+    category: GameItemsCategoryEnum.Default,
+  },
+  [GameClassNamesEnum.Desc_FF_WheatSeed_C]: {
+    name: GameItemsEnum.Desc_FF_WheatSeed_C,
+    category: GameItemsCategoryEnum.Default,
+  },
+  [GameClassNamesEnum.Desc_FF_BiomassCapsule_C]: {
+    name: GameItemsEnum.Desc_FF_BiomassCapsule_C,
+    category: GameItemsCategoryEnum.Default,
+  },
+  [GameClassNamesEnum.Desc_FF_Cooked_Bread_C]: {
+    name: GameItemsEnum.Desc_FF_Cooked_Bread_C,
+    category: GameItemsCategoryEnum.Default,
+  },
+  [GameClassNamesEnum.Desc_FF_Cooked_Muffin_Corn_C]: {
+    name: GameItemsEnum.Desc_FF_Cooked_Muffin_Corn_C,
+    category: GameItemsCategoryEnum.Default,
+  },
+  [GameClassNamesEnum.Desc_FF_Cooked_Muffin_Wheat_C]: {
+    name: GameItemsEnum.Desc_FF_Cooked_Muffin_Wheat_C,
+    category: GameItemsCategoryEnum.Default,
+  },
+  [GameClassNamesEnum.Desc_NetworkManager_C]: {
+    name: GameItemsEnum.Desc_NetworkManager_C,
+    category: GameItemsCategoryEnum.Default,
+  },
+  [GameClassNamesEnum.Desc_GolfCart_C]: {
+    name: GameItemsEnum.Desc_GolfCart_C,
+    category: GameItemsCategoryEnum.Default,
+  },
+  [GameClassNamesEnum.Desc_FF_Crop_Corn_C]: {
+    name: GameItemsEnum.Desc_FF_Crop_Corn_C,
+    category: GameItemsCategoryEnum.Default,
+  },
+  [GameClassNamesEnum.Desc_FF_Dirt_C]: {
+    name: GameItemsEnum.Desc_FF_Dirt_C,
+    category: GameItemsCategoryEnum.Default,
+  },
+  [GameClassNamesEnum.Desc_FF_Crop_Wheat_C]: {
+    name: GameItemsEnum.Desc_FF_Crop_Wheat_C,
     category: GameItemsCategoryEnum.Default,
   },
 };

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
 import { defaultSettingsData } from "../constants/defaultSettingsData";
-import { endPointDictionnary } from "../dictionaries/endPoint.dictionary";
-import type { EndpointEnum } from "../enums/endpoint.enum";
+import { endPointDictionary } from "../dictionaries/endPoint.dictionary";
+import { EndpointEnum } from "../enums/endpoint.enum";
 import { FetchMethodsEnum } from "../enums/fetchMethods.enum";
 import { fetcherHelper } from "../helpers/fetcher.helper";
 import type { MapperFunction } from "../types/endpoint";
@@ -15,7 +15,7 @@ export const useAutoRefetch = <Dto, Fm>(
   skip?: boolean,
 ): FetchResponse<Fm> => {
   const mapper = endPoint
-    ? (endPointDictionnary[endPoint] as MapperFunction<Dto, Fm>)
+    ? (endPointDictionary[endPoint] as MapperFunction<Dto, Fm>)
     : undefined;
   const { value: settings } = useLocalStorage<SettingsData>(
     "rmd_settings",

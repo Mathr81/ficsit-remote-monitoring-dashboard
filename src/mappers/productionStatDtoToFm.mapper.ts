@@ -1,4 +1,4 @@
-import { gameItemsDictionnary } from "../dictionaries/gameItems.dictionary";
+import { gameItemsDictionary } from "../dictionaries/gameItems.dictionary";
 import { GameClassNamesEnum } from "../enums/gameClassNames.enum";
 import type { ProdStatsDto } from "../types/apis/dataTransferObject/prodStatsDto";
 import type { ProductionStatFm } from "../types/apis/frontModel/productionStatFm";
@@ -14,8 +14,11 @@ export const productionStatDtoToFMapper = (
       "GameClassNamesEnum",
     );
 
+    const [prodPerMin, consumptionPerMin] = prodStatDto.ProdPerMin.match(/P: ([\d.]+).*C: ([\d.]+)/)?.slice(1, 3) ?? ['0', '0']
+    const prodMessagePerMinute = `P: ${parseFloat(prodPerMin).toFixed(2)} / min - C: ${parseFloat(consumptionPerMin).toFixed(2)} / min`;
+
     return {
-      name: gameItemsDictionnary[className].name,
+      name: gameItemsDictionary[className].name,
       className,
       currentProduction: prodStatDto.CurrentProd,
       currentConsumption: prodStatDto.CurrentConsumed,
@@ -23,7 +26,7 @@ export const productionStatDtoToFMapper = (
       percentConsumption: prodStatDto.ConsPercent,
       maxProduction: prodStatDto.MaxProd,
       maxConsumption: prodStatDto.MaxConsumed,
-      productionPerMinunte: prodStatDto.ProdPerMin,
+      productionPerMinute: prodMessagePerMinute,
     };
   });
 };

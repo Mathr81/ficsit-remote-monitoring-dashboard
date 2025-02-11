@@ -8,53 +8,31 @@ import {
 } from "@mui/joy";
 import React, { useCallback, useEffect, useState } from "react";
 import { HiOutlineQuestionMarkCircle } from "react-icons/hi";
-
 import { gameItemsDictionary } from "../../dictionaries/gameItems.dictionary";
 import { EndpointEnum } from "../../enums/endpoint.enum";
 import { getImageHelper } from "../../helpers/getImage.helper";
 import { useAutoRefetch } from "../../hooks/useAutoRefetch";
-import type { ProdStatsDto } from "../../types/apis/dataTransferObject/prodStatsDto";
-import type { WorldInvDto } from "../../types/apis/dataTransferObject/worldInvDto";
-import type { ProductionStatFm } from "../../types/apis/frontModel/productionStatFm";
-import type { WorldInvFm } from "../../types/apis/frontModel/worldInvFm";
+import type { CloudInvDto } from "../../types/apis/dataTransferObject/cloudInvDto";
+import { CloudInvFm } from "../../types/apis/frontModel/cloudInvFm";
 
-type ItemData = ProductionStatFm & Pick<WorldInvFm, "amount">;
+type ItemData = CloudInvFm;
 
-export const StorageView: React.FC = () => {
-  const { data: worldInv } = useAutoRefetch<WorldInvDto[], WorldInvFm[]>(
-    EndpointEnum.WORLD_INV,
+export const CloudView: React.FC = () => {
+  const { data: cloudInv } = useAutoRefetch<CloudInvDto[], CloudInvFm[]>(
+    EndpointEnum.CLOUD_INV
   );
-
-  const { data: prodStats } = useAutoRefetch<
-    ProdStatsDto[],
-    ProductionStatFm[]
-  >(EndpointEnum.PRODUCTION_STAT);
 
   const [items, setItems] = useState<ItemData[]>();
 
   const handlePrepareItems = useCallback(() => {
     const temp: ItemData[] = [];
-    worldInv?.forEach((item) => {
-      const foundedItem = prodStats?.find(
-        (prodItem) => prodItem.name === item.name,
-      );
-      if (foundedItem) temp.push({ ...foundedItem, amount: item.amount });
-      if (!foundedItem)
-        temp.push({
-          name: item.name,
-          className: item.className,
-          amount: 0,
-          currentProduction: 0,
-          currentConsumption: 0,
-          percentProduction: 0,
-          percentConsumption: 0,
-          maxProduction: 0,
-          maxConsumption: 0,
-          productionPerMinute: "P:0.0/min - C: 0.0/min",
-        });
+
+    cloudInv?.forEach((item) => {
+      temp.push(item);
     });
+
     setItems(temp);
-  }, [worldInv, prodStats]);
+  }, [cloudInv]);
 
   useEffect(() => {
     handlePrepareItems();
@@ -78,7 +56,7 @@ export const StorageView: React.FC = () => {
                 level="h2"
                 fontWeight={600}
               >
-                All Items in World
+                All Items in Dimensional Depot
               </Typography>
             </Grid>
           </Grid>
@@ -101,19 +79,6 @@ export const StorageView: React.FC = () => {
                   variant="outlined"
                   sx={{
                     padding: "3px",
-                    borderColor:
-                      Math.floor(item.currentConsumption) >
-                      Math.floor(item.currentProduction)
-                        ? "red"
-                        : Math.floor(item.currentProduction) > Math.floor(item.currentConsumption)
-                        ? "green"
-                        : "var(--joy-palette-neutral-outlinedBorder)",
-                    borderWidth:
-                      Math.floor(item.currentConsumption) >
-                      Math.floor(item.currentProduction) ||
-                      Math.floor(item.currentProduction) > Math.floor(item.currentConsumption)
-                        ? "3px"
-                        : "1px",
                   }}
                 >
                   <CardContent
@@ -140,9 +105,6 @@ export const StorageView: React.FC = () => {
                     <Typography marginBottom="5px">{item.name}</Typography>
                     <Typography level="body-md">
                       Total: {item.amount}
-                    </Typography>
-                    <Typography level="body-md">
-                      {item.productionPerMinute}
                     </Typography>
                   </CardContent>
                 </Card>

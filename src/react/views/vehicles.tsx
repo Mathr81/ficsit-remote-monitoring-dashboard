@@ -122,7 +122,7 @@ export const Vehicles: React.FC = () => {
                               )}
                             </Box>
                             <Typography sx={{ color: "rgba(255,255,255,0.9)" }}>
-                              Speed: {vehicle.speed} km/h
+                              Speed: {vehicle.speed.toFixed(2)} km/h
                             </Typography>
                           </Grid>
                         </Grid>
@@ -296,7 +296,7 @@ export const Vehicles: React.FC = () => {
                               <Typography
                                 sx={{ color: "rgba(255,255,255,0.9)" }}
                               >
-                                {Math.max(0, vehicle.engineRPM)} RPM
+                                {Math.max(0, vehicle.engineRPM).toFixed(2)} RPM
                               </Typography>
                             </Grid>
                           </Grid>
@@ -312,7 +312,7 @@ export const Vehicles: React.FC = () => {
                               <Typography
                                 sx={{ color: "rgba(255,255,255,0.9)" }}
                               >
-                                {vehicle.fuel?.[0]?.amount}
+                                {vehicle.fuel?.[0]?.amount ?? 0}
                               </Typography>
                             </Grid>
                           </Grid>
@@ -325,17 +325,18 @@ export const Vehicles: React.FC = () => {
                               </Typography>
                             </Grid>
                             <Grid>
-                              <img
-                                src={`/assets/Resource/${
-                                  vehicle.fuel?.[0]?.name
-                                }.png`}
-                                alt="Satisfactory Tractor fuel illustration"
-                                style={{ height: "30px", width: "30px" }}
-                              />
-                              {/* <BsXCircle
-                                color="red"
-                                size="25px"
-                              /> */}
+                              {vehicle.fuel?.[0]?.name ? (
+                                <img
+                                  src={`/assets/Resource/${vehicle.fuel?.[0]?.name}.png`}
+                                  alt="Satisfactory Tractor fuel illustration"
+                                  style={{ height: "30px", width: "30px" }}
+                                />
+                              ) : (
+                                <BsXCircle
+                                  color="red"
+                                  size="25px"
+                                />
+                              )}
                             </Grid>
                           </Grid>
                         </Grid>
@@ -554,17 +555,18 @@ export const Vehicles: React.FC = () => {
                               </Typography>
                             </Grid>
                             <Grid>
-                              <img
-                                src={`/assets/Resource/${
-                                  vehicle.fuel?.[0]?.name
-                                }.png`}
-                                alt="Satisfactory Tractor fuel illustration"
-                                style={{ height: "30px", width: "30px" }}
-                              />
-                              <BsXCircle
-                                color="red"
-                                size="25px"
-                              />
+                              {vehicle.fuel?.[0]?.name ? (
+                                <img
+                                  src={`/assets/Resource/${vehicle.fuel?.[0]?.name}.png`}
+                                  alt="Satisfactory Tractor fuel illustration"
+                                  style={{ height: "30px", width: "30px" }}
+                                />
+                              ) : (
+                                <BsXCircle
+                                  color="red"
+                                  size="25px"
+                                />
+                              )}
                             </Grid>
                           </Grid>
                         </Grid>

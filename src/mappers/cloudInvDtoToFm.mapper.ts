@@ -1,13 +1,13 @@
+import { CloudInvDto } from "../types/apis/dataTransferObject/cloudInvDto";
 import { gameItemsDictionary } from "../dictionaries/gameItems.dictionary";
 import { GameClassNamesEnum } from "../enums/gameClassNames.enum";
-import type { WorldInvDto } from "../types/apis/dataTransferObject/worldInvDto";
-import type { WorldInvFm } from "../types/apis/frontModel/worldInvFm";
 import { enumDtoToFmMapper } from "./enumDtoToFm.mapper";
+import { CloudInvFm } from "../types/apis/frontModel/cloudInvFm";
 
-export const worldInvDtoToFmMapper = (dto: WorldInvDto[]): WorldInvFm[] => {
-  return dto.map((worldInvDto) => {
+export const cloudInvDtoToFmMapper = (dto: CloudInvDto[]): CloudInvFm[] => {
+  return dto.map((cloudInvDto) => {
     const className = enumDtoToFmMapper(
-      worldInvDto.ClassName,
+      cloudInvDto.ClassName,
       GameClassNamesEnum,
       "GameClassNamesEnum",
     );
@@ -15,7 +15,7 @@ export const worldInvDtoToFmMapper = (dto: WorldInvDto[]): WorldInvFm[] => {
     return {
       name: gameItemsDictionary[className].name,
       className,
-      amount: worldInvDto.Amount,
+      amount: cloudInvDto.Amount,
     };
   });
 };

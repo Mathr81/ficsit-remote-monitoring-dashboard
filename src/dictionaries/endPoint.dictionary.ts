@@ -1,3 +1,4 @@
+import { cloudInvDtoToFmMapper } from "../mappers/cloudInvDtoToFm.mapper";
 import { EndpointEnum } from "../enums/endpoint.enum";
 import { awesomeSinkDtoToFmMapper } from "../mappers/awesomeSinkDtoToFm.mapper";
 import { droneDtoToFmMapper } from "../mappers/droneDtoToFm.mapper";
@@ -13,7 +14,7 @@ import { vehicleDtoToFmMapper } from "../mappers/vehicleDtoToFm.mapper";
 import { worldInvDtoToFmMapper } from "../mappers/worldInvDtoToFm.mapper";
 import type { EndPoint } from "../types/endpoint";
 
-export const endPointDictionnary: EndPoint = {
+export const endPointDictionary: EndPoint = {
   [EndpointEnum.ASSEMBLER]: factoryDtoToFmMapper,
   [EndpointEnum.AWESOME_SINK_EXPLORATION]: awesomeSinkDtoToFmMapper,
   [EndpointEnum.AWESOME_SINK_RESOURCE]: awesomeSinkDtoToFmMapper,
@@ -22,6 +23,7 @@ export const endPointDictionnary: EndPoint = {
   [EndpointEnum.COAL_GENERATOR]: generatorsDtoToFmMapper,
   [EndpointEnum.CONSTRUCTOR]: factoryDtoToFmMapper,
   [EndpointEnum.CONVERTER]: factoryDtoToFmMapper,
+  [EndpointEnum.CLOUD_INV]: cloudInvDtoToFmMapper,
   [EndpointEnum.DRONE]: droneDtoToFmMapper,
   [EndpointEnum.DRONE_STATION]: droneStationDtoToFmMapper,
   [EndpointEnum.FOUNDRY]: factoryDtoToFmMapper,

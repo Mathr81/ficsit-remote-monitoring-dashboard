@@ -4,6 +4,7 @@ export enum EndpointEnum {
   AWESOME_SINK_RESOURCE = "getResourceSink",
   BIOMASS_GENERATOR = "getBiomassGenerator",
   BLENDER = "getBlender",
+  CLOUD_INV = "getCloudInv",
   COAL_GENERATOR = "getCoalGenerator",
   CONSTRUCTOR = "getConstructor",
   CONVERTER = "getConverter",

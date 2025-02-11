@@ -11,7 +11,9 @@ import {
   GiDeliveryDrone,
   GiFactory,
   GiMineTruck,
+  GiPerson,
   GiPowerGenerator,
+  GiSunCloud,
 } from "react-icons/gi";
 import { TbTrain } from "react-icons/tb";
 import { Link } from "react-router-dom";
@@ -90,6 +92,13 @@ const SearchAppBar: React.FC = () => {
           >
             <Link
               style={{ textDecoration: "none", marginRight: "10px" }}
+              to="/players"
+            >
+              <Button startIcon={<GiPerson />}>Players</Button>
+            </Link>
+
+            <Link
+              style={{ textDecoration: "none", marginRight: "10px" }}
               to="/power"
             >
               <Button
@@ -128,6 +137,12 @@ const SearchAppBar: React.FC = () => {
               to="/storageView"
             >
               <Button startIcon={<GiCargoCrate />}>Storage View</Button>
+            </Link>
+            <Link
+              style={{ textDecoration: "none", marginRight: "10px" }}
+              to="/cloudView"
+            >
+              <Button startIcon={<GiSunCloud />}>Cloud View</Button>
             </Link>
           </Stack>
 

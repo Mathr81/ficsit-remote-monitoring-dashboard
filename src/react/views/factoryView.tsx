@@ -13,7 +13,7 @@ import React from "react";
 import { BsArrowRightShort, BsExclamationTriangleFill } from "react-icons/bs";
 import { redirect, useSearchParams } from "react-router-dom";
 
-import { gameItemsDictionnary } from "../../dictionaries/gameItems.dictionary";
+import { gameItemsDictionary } from "../../dictionaries/gameItems.dictionary";
 import type { GameItemsEnum } from "../../enums/gameItems.enum";
 import { gameItemFilterHelper } from "../../helpers/gameItemFilter.helper";
 import { getImageHelper } from "../../helpers/getImage.helper";
@@ -32,7 +32,7 @@ export const DetailedFactoryView: React.FC = () => {
 
   const factoriesList = objectEntriesToArrayHelper<GameItems>(
     gameItemFilterHelper({
-      gameItemsDictionnary,
+      gameItemsDictionary,
       filter: "factories",
     }),
   );

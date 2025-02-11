@@ -4,18 +4,18 @@ import { GameItemsCategoryEnum } from "../enums/gameItemsCategory.enum";
 import type { GameItems } from "../types/gameItems/gameItems";
 import type { GameItemGeneratorBuilding } from "../types/gameItems/generatorBuilding";
 import type { GameItemManufacturerBuilding } from "../types/gameItems/manufacturerBuilding";
-import type { GameItemsDictionnary } from "../types/gameItemsDictionary";
+import type { gameItemsDictionary } from "../types/gameItemsDictionary";
 
 type Args = {
-  gameItemsDictionnary: GameItemsDictionnary;
+  gameItemsDictionary: gameItemsDictionary;
   filter: GameItemsCategoryEnum | "generatorsWithEndpoint" | "factories";
 };
 
 export const gameItemFilterHelper = ({
-  gameItemsDictionnary,
+  gameItemsDictionary,
   filter,
 }: Args): [GameClassNamesEnum, GameItems][] => {
-  const filteredArray = Object.entries(gameItemsDictionnary) as [
+  const filteredArray = Object.entries(gameItemsDictionary) as [
     GameClassNamesEnum,
     GameItems,
   ][];

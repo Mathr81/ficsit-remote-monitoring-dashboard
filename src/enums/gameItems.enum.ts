@@ -1000,4 +1000,17 @@ export enum GameItemsEnum {
   SwatchDesc_Slot7_C = "SwatchDesc_Slot7_C",
   SwatchDesc_Slot8_C = "SwatchDesc_Slot8_C",
   SwatchDesc_Slot9_C = "SwatchDesc_Slot9_C",
+
+  // Modded items
+  Desc_FF_CornSeed_C = "Corn Seed",
+  Desc_FF_WheatSeed_C = "Wheat Seed",
+  Desc_FF_BiomassCapsule_C = "Biomass Capsule",
+  Desc_FF_Cooked_Bread_C = "Cooked Bread",
+  Desc_FF_Cooked_Muffin_Corn_C = "Cooked Muffin Corn",
+  Desc_FF_Cooked_Muffin_Wheat_C = "Cooked Muffin Wheat",
+  Desc_NetworkManager_C = "Network Manager",
+  Desc_GolfCart_C = "Golf Cart",
+  Desc_FF_Crop_Corn_C = "Crop Corn",
+  Desc_FF_Dirt_C = "Dirt",
+  Desc_FF_Crop_Wheat_C = "Crop Wheat",
 }
