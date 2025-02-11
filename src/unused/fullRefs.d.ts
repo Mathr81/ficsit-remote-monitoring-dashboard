@@ -1,8 +1,8 @@
-import type { FullRefsEnum } from "./fullRefs.enum";
+import type { FullRefsEnum } from './fullRefs.enum';
 
 type FullRefsObject = {
-  type: string;
-  category: string;
+    type: string;
+    category: string;
 };
 
 export type FullRefs = Record<FullRefsEnum, FullRefsObject>;

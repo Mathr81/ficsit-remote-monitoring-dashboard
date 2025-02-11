@@ -33,7 +33,7 @@
      */
 
 {
-  /* <Stack sx={{margin: '50px 0'}} display={'flex'} alignItems={'center'}>
+    /* <Stack sx={{margin: '50px 0'}} display={'flex'} alignItems={'center'}>
                 <Box sx={{ width: '70%' }}>
                     <Stepper alternativeLabel activeStep={step}>
                         {steps.map((label, index) => {
@@ -61,23 +61,23 @@
             </Stack> */
 }
 
-let errorText = "";
-const steps = ["Configure a Recipe", "Start Producing", " Lay Back and Relax"];
+let errorText = '';
+const steps = ['Configure a Recipe', 'Start Producing', ' Lay Back and Relax'];
 
 const isFailingStep = (step: number) => {
-  if (step === 0) {
-    if (buildingsData.IsConfigured === true) {
-      return false;
+    if (step === 0) {
+        if (buildingsData.IsConfigured === true) {
+            return false;
+        }
+        errorText = 'Recipe not configured!';
+        return true;
     }
-    errorText = "Recipe not configured!";
-    return true;
-  }
 
-  if (step === 1) {
-    if (buildingsData.IsProducing === true) {
-      return false;
+    if (step === 1) {
+        if (buildingsData.IsProducing === true) {
+            return false;
+        }
+        errorText = 'Not able to produce... Check Power!';
+        return true;
     }
-    errorText = "Not able to produce... Check Power!";
-    return true;
-  }
 };

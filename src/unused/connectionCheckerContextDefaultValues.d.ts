@@ -1,4 +1,4 @@
 export type ConnectionCheckerContextDefaultValues = {
-  msInterval: number;
-  checkConnectionToFRM: () => void;
+    msInterval: number;
+    checkConnectionToFRM: () => void;
 };

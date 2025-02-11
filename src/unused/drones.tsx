@@ -1,5 +1,5 @@
 {
-  /* <Grid container spacing={2} sx={{marginBottom: '10px'}}>
+    /* <Grid container spacing={2} sx={{marginBottom: '10px'}}>
                                                 <Grid>
                                                     
                                                 </Grid>
@@ -26,34 +26,30 @@ let bottom = 0;
 let totalLength = 0;
 
 if (
-  droneStationPrev[index].length > 0 &&
-  droneStationPrev[index][0] &&
-  droneStationPrev[index][1]
+    droneStationPrev[index].length > 0 &&
+    droneStationPrev[index][0] &&
+    droneStationPrev[index][1]
 ) {
-  top = Math.floor(
-    ((droneStationPrev[index][0].location.x - drone.location.x) ** 2 +
-      (droneStationPrev[index][0].location.y - drone.location.y) ** 2) **
-      0.5 /
-      100,
-  );
+    top = Math.floor(
+        ((droneStationPrev[index][0].location.x - drone.location.x) ** 2 +
+            (droneStationPrev[index][0].location.y - drone.location.y) ** 2) **
+            0.5 /
+            100
+    );
 
-  bottom = Math.floor(
-    ((droneStationPrev[index][1].location.x - drone.location.x) ** 2 +
-      (droneStationPrev[index][1].location.y - drone.location.y) ** 2) **
-      0.5 /
-      100,
-  );
+    bottom = Math.floor(
+        ((droneStationPrev[index][1].location.x - drone.location.x) ** 2 +
+            (droneStationPrev[index][1].location.y - drone.location.y) ** 2) **
+            0.5 /
+            100
+    );
 
-  totalLength = Math.floor(
-    ((droneStationPrev[index][0].location.x -
-      droneStationPrev[index][1].location.x) **
-      2 +
-      (droneStationPrev[index][0].location.y -
-        droneStationPrev[index][1].location.y) **
-        2) **
-      0.5 /
-      100,
-  );
+    totalLength = Math.floor(
+        ((droneStationPrev[index][0].location.x - droneStationPrev[index][1].location.x) ** 2 +
+            (droneStationPrev[index][0].location.y - droneStationPrev[index][1].location.y) ** 2) **
+            0.5 /
+            100
+    );
 
-  percentDone = (top / totalLength) * 100;
+    percentDone = (top / totalLength) * 100;
 }
