@@ -2,7 +2,7 @@ const toolRefs: Record<string, any> = {
   "Rebar Gun": {
     image: "Tools/RebarGun_256.png",
   },
-  "Detonator": {
+  Detonator: {
     image: "Tools/Detonator_256.png",
   },
   "Gas Mask": {
@@ -11,19 +11,19 @@ const toolRefs: Record<string, any> = {
   "Hard Drive": {
     image: "Tools/HardDrive_256.png",
   },
-  "Chainsaw": {
+  Chainsaw: {
     image: "Tools/IconDesc_Chainsaw_256.png",
   },
   "Coffee Cup": {
     image: "Tools/IconDesc_CoffeeCup_256.png",
   },
-  "Xenobasher": {
+  Xenobasher: {
     image: "Tools/ShockBaton_256.png",
   },
-  "Paleberry": {
+  Paleberry: {
     image: "Tools/IconDesc_Berry_256.png",
   },
-  "Boombox": {
+  Boombox: {
     image: "Tools/IconDesc_Boombox_256.png",
   },
   "Golden Coffee Cup": {
@@ -35,7 +35,7 @@ const toolRefs: Record<string, any> = {
   "Golden Golf Cart": {
     image: "Tools/IconDesc_GolfCartGold_256.png",
   },
-  "HatcherPart": {
+  HatcherPart: {
     image: "Tools/IconDesc_HatcherPart_256.png",
   },
   "HUB Parts": {
@@ -47,7 +47,7 @@ const toolRefs: Record<string, any> = {
   "Hog Part": {
     image: "Tools/IconDesc_HogPart_256.png",
   },
-  "Hoverpack": {
+  Hoverpack: {
     image: "Tools/IconDesc_Hoverpack_256.png",
   },
   "Blade Runners": {
@@ -59,13 +59,13 @@ const toolRefs: Record<string, any> = {
   "Xeno-Zapper": {
     image: "Tools/Xeno-Zapper.png",
   },
-  "Zipline": {
+  Zipline: {
     image: "Tools/IconDesc_Zipline_256.png",
   },
-  "Inhaler": {
+  Inhaler: {
     image: "Tools/Inhaler_256.png",
   },
-  "Jetpack": {
+  Jetpack: {
     image: "Tools/Jetpack_256.png",
   },
   "Beryl Nut": {
@@ -74,16 +74,16 @@ const toolRefs: Record<string, any> = {
   "Object Scanner": {
     image: "Tools/ObjectScanner_256.png",
   },
-  "Parachute": {
+  Parachute: {
     image: "Tools/Parachute_256.png",
   },
   "Portable Miner": {
     image: "Tools/PortableMiner_256.png",
   },
-  "Rifle": {
+  Rifle: {
     image: "Tools/RifleMk1_256.png",
   },
-  "Somersloop": {
+  Somersloop: {
     image: "Tools/Wat_1_256.png",
   },
   "Mercer Sphere": {

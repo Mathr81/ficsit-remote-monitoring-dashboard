@@ -20,17 +20,14 @@ export const BuildingButton: React.FC<Props> = ({
 
   return (
     <Grid xs={4}>
-      <Link
-        to={link}
-        style={{ textDecoration: "none" }}
-      >
+      <Link to={link} style={{ textDecoration: "none" }}>
         <Card
           variant="outlined"
           sx={{
             "&:hover": {
               borderColor: "var(--joy-palette-neutral-700)",
             },
-            "cursor": "pointer",
+            cursor: "pointer",
           }}
         >
           <CardContent>

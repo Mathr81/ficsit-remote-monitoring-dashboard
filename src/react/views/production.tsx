@@ -26,41 +26,24 @@ export const FactorysSwitch: React.FC = () => {
 
   return (
     <Container sx={{ paddingTop: "50px" }}>
-      <Card
-        variant="outlined"
-        sx={{ marginBottom: "30px" }}
-      >
+      <Card variant="outlined" sx={{ marginBottom: "30px" }}>
         <CardContent>
-          <Grid
-            container
-            display="flex"
-            alignItems="center"
-          >
+          <Grid container display="flex" alignItems="center">
             <Grid xs>
-              <Typography
-                level="h2"
-                marginBottom="5px"
-                fontWeight={600}
-              >
+              <Typography level="h2" marginBottom="5px" fontWeight={600}>
                 Available Factories
               </Typography>
             </Grid>
             <Grid>
               <IconButton size="lg">
-                <GiCargoCrate
-                  size="22px"
-                  color="rgba(255,255,255,0.1)"
-                />
+                <GiCargoCrate size="22px" color="rgba(255,255,255,0.1)" />
               </IconButton>
             </Grid>
           </Grid>
         </CardContent>
       </Card>
 
-      <Grid
-        container
-        spacing={3}
-      >
+      <Grid container spacing={3}>
         {factories.map((factory) => {
           return (
             <BuildingButton

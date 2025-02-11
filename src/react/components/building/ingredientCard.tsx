@@ -36,11 +36,7 @@ export const IngredientCard: React.FC<Props> = ({ product }) => {
         >
           {product.name}
         </Typography>
-        <Grid
-          spacing={2}
-          sx={{ paddingTop: "2px" }}
-          container
-        >
+        <Grid spacing={2} sx={{ paddingTop: "2px" }} container>
           <Grid>
             <img
               src={getImageHelper(product.className)}
@@ -49,11 +45,7 @@ export const IngredientCard: React.FC<Props> = ({ product }) => {
             />
           </Grid>
           <Grid xs>
-            <Grid
-              spacing={0}
-              container
-              sx={{ paddingTop: 0 }}
-            >
+            <Grid spacing={0} container sx={{ paddingTop: 0 }}>
               <Grid xs>
                 <Typography level="body-md">Current Consumed</Typography>
               </Grid>
@@ -67,11 +59,7 @@ export const IngredientCard: React.FC<Props> = ({ product }) => {
                 </Typography>
               </Grid>
             </Grid>
-            <Grid
-              spacing={0}
-              container
-              sx={{ paddingTop: 0 }}
-            >
+            <Grid spacing={0} container sx={{ paddingTop: 0 }}>
               <Grid xs>
                 <Typography level="body-md">Max Consumed</Typography>
               </Grid>
@@ -85,11 +73,7 @@ export const IngredientCard: React.FC<Props> = ({ product }) => {
                 </Typography>
               </Grid>
             </Grid>
-            <Grid
-              spacing={0}
-              container
-              sx={{ paddingTop: 0 }}
-            >
+            <Grid spacing={0} container sx={{ paddingTop: 0 }}>
               <Grid xs>
                 <Typography level="body-md">Efficency Consume</Typography>
               </Grid>

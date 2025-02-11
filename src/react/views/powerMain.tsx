@@ -60,67 +60,36 @@ export const PowerMain: React.FC = () => {
 
   return (
     <Container sx={{ paddingTop: "50px" }}>
-      <Card
-        variant="outlined"
-        sx={{ marginBottom: "30px" }}
-      >
+      <Card variant="outlined" sx={{ marginBottom: "30px" }}>
         <CardContent>
-          <Grid
-            container
-            display="flex"
-            alignItems="center"
-          >
+          <Grid container display="flex" alignItems="center">
             <Grid xs>
-              <Typography
-                level="h2"
-                marginBottom="5px"
-                fontWeight={600}
-              >
+              <Typography level="h2" marginBottom="5px" fontWeight={600}>
                 All Power
               </Typography>
             </Grid>
             <Grid>
               <IconButton size="lg">
-                <GiCargoCrate
-                  size="22px"
-                  color="rgba(255,255,255,0.1)"
-                />
+                <GiCargoCrate size="22px" color="rgba(255,255,255,0.1)" />
               </IconButton>
             </Grid>
           </Grid>
         </CardContent>
       </Card>
-      <Card
-        variant="outlined"
-        sx={{ marginBottom: "30px" }}
-      >
+      <Card variant="outlined" sx={{ marginBottom: "30px" }}>
         <CardContent>
-          <Card
-            variant="outlined"
-            sx={{ marginBottom: "30px" }}
-          >
+          <Card variant="outlined" sx={{ marginBottom: "30px" }}>
             <CardContent>
-              <Grid
-                container
-                display="flex"
-                alignItems="center"
-              >
+              <Grid container display="flex" alignItems="center">
                 <Grid xs>
-                  <Typography
-                    level="h3"
-                    marginBottom="5px"
-                    fontWeight={600}
-                  >
+                  <Typography level="h3" marginBottom="5px" fontWeight={600}>
                     Power Generators
                   </Typography>
                 </Grid>
               </Grid>
             </CardContent>
           </Card>
-          <Grid
-            container
-            spacing={2}
-          >
+          <Grid container spacing={2}>
             {generators.map((generator) => {
               return (
                 <BuildingButton
@@ -134,11 +103,7 @@ export const PowerMain: React.FC = () => {
           </Grid>
         </CardContent>
       </Card>
-      <Grid
-        container
-        spacing={2}
-        sx={{ marginBottom: "30px" }}
-      >
+      <Grid container spacing={2} sx={{ marginBottom: "30px" }}>
         <Grid xs>
           <Card>
             <Typography level="h3">
@@ -248,10 +213,7 @@ export const PowerMain: React.FC = () => {
         </Grid>
       </Grid>
       <Divider sx={{ marginBottom: "50px" }} />
-      <Typography
-        level="h4"
-        sx={{ marginTop: "30px", marginBottom: "30px" }}
-      >
+      <Typography level="h4" sx={{ marginTop: "30px", marginBottom: "30px" }}>
         All Power Circuits
       </Typography>
       {power ? (
@@ -270,10 +232,7 @@ export const PowerMain: React.FC = () => {
                 }}
               >
                 <CardContent>
-                  <Grid
-                    container
-                    sx={{ marginBottom: "20px" }}
-                  >
+                  <Grid container sx={{ marginBottom: "20px" }}>
                     <Grid xs>
                       <Box
                         sx={{
@@ -317,10 +276,7 @@ export const PowerMain: React.FC = () => {
                       )}
                     </Grid>
                   </Grid>
-                  <Grid
-                    container
-                    spacing={2}
-                  >
+                  <Grid container spacing={2}>
                     <Grid xs>
                       <Card variant="outlined">
                         <Typography level="h4">
@@ -387,10 +343,7 @@ export const PowerMain: React.FC = () => {
                     </Grid>
                   </Grid>
 
-                  <Grid
-                    container
-                    sx={{ marginTop: "30px" }}
-                  >
+                  <Grid container sx={{ marginTop: "30px" }}>
                     <Grid xs>
                       <Typography level="h4">Battery</Typography>
                     </Grid>
@@ -416,62 +369,56 @@ export const PowerMain: React.FC = () => {
                     </Grid>
                   </Grid>
                   {powerGroup.batteryCapacity != 0 && (
-                      <Grid
-                        container
-                        spacing={2}
-                        sx={{ marginTop: "20px" }}
-                      >
-                        <Grid xs>
-                          <Card variant="outlined">
-                            <Typography level="h4">
-                              {powerGroup.batteryCapacity} MWh
-                            </Typography>
-                            <Typography level="body-md">
-                              Battery Capacity
-                            </Typography>
-                          </Card>
-                        </Grid>
-                        <Grid xs>
-                          <Card variant="outlined">
-                            <Typography level="h4">
-                              {Math.round(powerGroup.batteryPercent * 100) /
-                                100}{" "}
-                              %
-                            </Typography>
-                            <Typography level="body-md">
-                              Battery Filled Percent
-                            </Typography>
-                          </Card>
-                        </Grid>
-                        <Grid xs>
-                          <Card variant="outlined">
-                            <Typography level="h4">
-                              {Math.round(
-                                powerGroup.batteryDifferential * 100,
-                              ) / 100}{" "}
-                              MW
-                            </Typography>
-                            <Typography level="body-md">
-                              Battery Differential
-                            </Typography>
-                          </Card>
-                        </Grid>
-                        <Grid xs>
-                          <Card variant="outlined">
-                            <Typography level="h4">
-                              {powerGroup.batteryTimeEmpty !== "00:00:00"
-                                ? powerGroup.batteryTimeEmpty
-                                : powerGroup.batteryTimeFull}
-                            </Typography>
-                            <Typography level="body-md">
-                              {powerGroup.batteryTimeEmpty !== "00:00:00"
-                                ? "Battery Empty At Time"
-                                : "Battery Full At Time"}
-                            </Typography>
-                          </Card>
-                        </Grid>
+                    <Grid container spacing={2} sx={{ marginTop: "20px" }}>
+                      <Grid xs>
+                        <Card variant="outlined">
+                          <Typography level="h4">
+                            {powerGroup.batteryCapacity} MWh
+                          </Typography>
+                          <Typography level="body-md">
+                            Battery Capacity
+                          </Typography>
+                        </Card>
                       </Grid>
-                    )}
+                      <Grid xs>
+                        <Card variant="outlined">
+                          <Typography level="h4">
+                            {Math.round(powerGroup.batteryPercent * 100) / 100}{" "}
+                            %
+                          </Typography>
+                          <Typography level="body-md">
+                            Battery Filled Percent
+                          </Typography>
+                        </Card>
+                      </Grid>
+                      <Grid xs>
+                        <Card variant="outlined">
+                          <Typography level="h4">
+                            {Math.round(powerGroup.batteryDifferential * 100) /
+                              100}{" "}
+                            MW
+                          </Typography>
+                          <Typography level="body-md">
+                            Battery Differential
+                          </Typography>
+                        </Card>
+                      </Grid>
+                      <Grid xs>
+                        <Card variant="outlined">
+                          <Typography level="h4">
+                            {powerGroup.batteryTimeEmpty !== "00:00:00"
+                              ? powerGroup.batteryTimeEmpty
+                              : powerGroup.batteryTimeFull}
+                          </Typography>
+                          <Typography level="body-md">
+                            {powerGroup.batteryTimeEmpty !== "00:00:00"
+                              ? "Battery Empty At Time"
+                              : "Battery Full At Time"}
+                          </Typography>
+                        </Card>
+                      </Grid>
+                    </Grid>
+                  )}
                 </CardContent>
               </Card>
             );
@@ -480,10 +427,7 @@ export const PowerMain: React.FC = () => {
       ) : (
         <Card sx={{ marginBottom: "30px", padding: "20px", opacity: 0.5 }}>
           <CardContent>
-            <Grid
-              container
-              sx={{ marginBottom: "20px" }}
-            >
+            <Grid container sx={{ marginBottom: "20px" }}>
               <Grid xs>
                 <Box
                   sx={{
@@ -492,35 +436,20 @@ export const PowerMain: React.FC = () => {
                     alignItems: "center",
                   }}
                 >
-                  <Skeleton
-                    variant="text"
-                    width="80px"
-                  />
+                  <Skeleton variant="text" width="80px" />
                 </Box>
               </Grid>
               <Grid>
-                <Skeleton
-                  variant="text"
-                  width="120px"
-                />
+                <Skeleton variant="text" width="120px" />
               </Grid>
             </Grid>
-            <Grid
-              container
-              spacing={2}
-            >
+            <Grid container spacing={2}>
               <Grid xs>
                 <Card variant="outlined">
                   <Typography level="h4">
-                    <Skeleton
-                      variant="text"
-                      width="110px"
-                    />
+                    <Skeleton variant="text" width="110px" />
                   </Typography>
-                  <Typography
-                    marginTop="10px"
-                    level="body-md"
-                  >
+                  <Typography marginTop="10px" level="body-md">
                     Power Capacity
                   </Typography>
                 </Card>
@@ -528,15 +457,9 @@ export const PowerMain: React.FC = () => {
               <Grid xs>
                 <Card variant="outlined">
                   <Typography level="h4">
-                    <Skeleton
-                      variant="text"
-                      width="80px"
-                    />
+                    <Skeleton variant="text" width="80px" />
                   </Typography>
-                  <Typography
-                    marginTop="10px"
-                    level="body-md"
-                  >
+                  <Typography marginTop="10px" level="body-md">
                     Power Production
                   </Typography>
                 </Card>
@@ -544,15 +467,9 @@ export const PowerMain: React.FC = () => {
               <Grid xs>
                 <Card variant="outlined">
                   <Typography level="h4">
-                    <Skeleton
-                      variant="text"
-                      width="90px"
-                    />
+                    <Skeleton variant="text" width="90px" />
                   </Typography>
-                  <Typography
-                    marginTop="10px"
-                    level="body-md"
-                  >
+                  <Typography marginTop="10px" level="body-md">
                     Current consumption
                   </Typography>
                 </Card>
@@ -560,33 +477,21 @@ export const PowerMain: React.FC = () => {
               <Grid xs>
                 <Card variant="outlined">
                   <Typography level="h4">
-                    <Skeleton
-                      variant="text"
-                      width="80px"
-                    />
+                    <Skeleton variant="text" width="80px" />
                   </Typography>
-                  <Typography
-                    marginTop="10px"
-                    level="body-md"
-                  >
+                  <Typography marginTop="10px" level="body-md">
                     Max. Consumed
                   </Typography>
                 </Card>
               </Grid>
             </Grid>
 
-            <Grid
-              container
-              sx={{ marginTop: "30px" }}
-            >
+            <Grid container sx={{ marginTop: "30px" }}>
               <Grid xs>
                 <Typography level="h4">Battery</Typography>
               </Grid>
               <Grid>
-                <Skeleton
-                  variant="text"
-                  width="80px"
-                />
+                <Skeleton variant="text" width="80px" />
               </Grid>
             </Grid>
           </CardContent>

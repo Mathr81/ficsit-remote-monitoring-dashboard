@@ -19,7 +19,7 @@ type ItemData = CloudInvFm;
 
 export const CloudView: React.FC = () => {
   const { data: cloudInv } = useAutoRefetch<CloudInvDto[], CloudInvFm[]>(
-    EndpointEnum.CLOUD_INV
+    EndpointEnum.CLOUD_INV,
   );
 
   const [items, setItems] = useState<ItemData[]>();
@@ -52,10 +52,7 @@ export const CloudView: React.FC = () => {
             marginBottom="20px"
           >
             <Grid xs>
-              <Typography
-                level="h2"
-                fontWeight={600}
-              >
+              <Typography level="h2" fontWeight={600}>
                 All Items in Dimensional Depot
               </Typography>
             </Grid>
@@ -63,18 +60,10 @@ export const CloudView: React.FC = () => {
         </CardContent>
       </Card>
       {items ? (
-        <Grid
-          container
-          paddingY={0}
-          px={0}
-          spacing={2}
-        >
+        <Grid container paddingY={0} px={0} spacing={2}>
           {items.map((item) => {
             return (
-              <Grid
-                xs={4}
-                key={item.className}
-              >
+              <Grid xs={4} key={item.className}>
                 <Card
                   variant="outlined"
                   sx={{
@@ -113,17 +102,9 @@ export const CloudView: React.FC = () => {
           })}
         </Grid>
       ) : (
-        <Grid
-          container
-          paddingY={0}
-          px={0}
-          spacing={2}
-        >
+        <Grid container paddingY={0} px={0} spacing={2}>
           <Grid xs={4}>
-            <Card
-              variant="outlined"
-              sx={{ height: "100%", padding: 0 }}
-            >
+            <Card variant="outlined" sx={{ height: "100%", padding: 0 }}>
               <CardContent
                 sx={{
                   display: "flex",
@@ -148,18 +129,12 @@ export const CloudView: React.FC = () => {
                   width="50px"
                   sx={{ marginBottom: "10px" }}
                 />
-                <Skeleton
-                  variant="text"
-                  width="150px"
-                />
+                <Skeleton variant="text" width="150px" />
               </CardContent>
             </Card>
           </Grid>
           <Grid xs={4}>
-            <Card
-              variant="outlined"
-              sx={{ height: "100%", padding: 0 }}
-            >
+            <Card variant="outlined" sx={{ height: "100%", padding: 0 }}>
               <CardContent
                 sx={{
                   display: "flex",
@@ -184,18 +159,12 @@ export const CloudView: React.FC = () => {
                   width="50px"
                   sx={{ marginBottom: "10px" }}
                 />
-                <Skeleton
-                  variant="text"
-                  width="150px"
-                />
+                <Skeleton variant="text" width="150px" />
               </CardContent>
             </Card>
           </Grid>
           <Grid xs={4}>
-            <Card
-              variant="outlined"
-              sx={{ height: "100%", padding: 0 }}
-            >
+            <Card variant="outlined" sx={{ height: "100%", padding: 0 }}>
               <CardContent
                 sx={{
                   display: "flex",
@@ -220,18 +189,12 @@ export const CloudView: React.FC = () => {
                   width="50px"
                   sx={{ marginBottom: "10px" }}
                 />
-                <Skeleton
-                  variant="text"
-                  width="150px"
-                />
+                <Skeleton variant="text" width="150px" />
               </CardContent>
             </Card>
           </Grid>
           <Grid xs={4}>
-            <Card
-              variant="outlined"
-              sx={{ height: "100%", padding: 0 }}
-            >
+            <Card variant="outlined" sx={{ height: "100%", padding: 0 }}>
               <CardContent
                 sx={{
                   display: "flex",
@@ -256,18 +219,12 @@ export const CloudView: React.FC = () => {
                   width="50px"
                   sx={{ marginBottom: "10px" }}
                 />
-                <Skeleton
-                  variant="text"
-                  width="150px"
-                />
+                <Skeleton variant="text" width="150px" />
               </CardContent>
             </Card>
           </Grid>
           <Grid xs={4}>
-            <Card
-              variant="outlined"
-              sx={{ height: "100%", padding: 0 }}
-            >
+            <Card variant="outlined" sx={{ height: "100%", padding: 0 }}>
               <CardContent
                 sx={{
                   display: "flex",
@@ -292,18 +249,12 @@ export const CloudView: React.FC = () => {
                   width="50px"
                   sx={{ marginBottom: "10px" }}
                 />
-                <Skeleton
-                  variant="text"
-                  width="150px"
-                />
+                <Skeleton variant="text" width="150px" />
               </CardContent>
             </Card>
           </Grid>
           <Grid xs={4}>
-            <Card
-              variant="outlined"
-              sx={{ height: "100%", padding: 0 }}
-            >
+            <Card variant="outlined" sx={{ height: "100%", padding: 0 }}>
               <CardContent
                 sx={{
                   display: "flex",
@@ -328,18 +279,12 @@ export const CloudView: React.FC = () => {
                   width="50px"
                   sx={{ marginBottom: "10px" }}
                 />
-                <Skeleton
-                  variant="text"
-                  width="150px"
-                />
+                <Skeleton variant="text" width="150px" />
               </CardContent>
             </Card>
           </Grid>
           <Grid xs={4}>
-            <Card
-              variant="outlined"
-              sx={{ height: "100%", padding: 0 }}
-            >
+            <Card variant="outlined" sx={{ height: "100%", padding: 0 }}>
               <CardContent
                 sx={{
                   display: "flex",
@@ -364,18 +309,12 @@ export const CloudView: React.FC = () => {
                   width="50px"
                   sx={{ marginBottom: "10px" }}
                 />
-                <Skeleton
-                  variant="text"
-                  width="150px"
-                />
+                <Skeleton variant="text" width="150px" />
               </CardContent>
             </Card>
           </Grid>
           <Grid xs={4}>
-            <Card
-              variant="outlined"
-              sx={{ height: "100%", padding: 0 }}
-            >
+            <Card variant="outlined" sx={{ height: "100%", padding: 0 }}>
               <CardContent
                 sx={{
                   display: "flex",
@@ -400,18 +339,12 @@ export const CloudView: React.FC = () => {
                   width="50px"
                   sx={{ marginBottom: "10px" }}
                 />
-                <Skeleton
-                  variant="text"
-                  width="150px"
-                />
+                <Skeleton variant="text" width="150px" />
               </CardContent>
             </Card>
           </Grid>
           <Grid xs={4}>
-            <Card
-              variant="outlined"
-              sx={{ height: "100%", padding: 0 }}
-            >
+            <Card variant="outlined" sx={{ height: "100%", padding: 0 }}>
               <CardContent
                 sx={{
                   display: "flex",
@@ -436,18 +369,12 @@ export const CloudView: React.FC = () => {
                   width="50px"
                   sx={{ marginBottom: "10px" }}
                 />
-                <Skeleton
-                  variant="text"
-                  width="150px"
-                />
+                <Skeleton variant="text" width="150px" />
               </CardContent>
             </Card>
           </Grid>
           <Grid xs={4}>
-            <Card
-              variant="outlined"
-              sx={{ height: "100%", padding: 0 }}
-            >
+            <Card variant="outlined" sx={{ height: "100%", padding: 0 }}>
               <CardContent
                 sx={{
                   display: "flex",
@@ -472,18 +399,12 @@ export const CloudView: React.FC = () => {
                   width="50px"
                   sx={{ marginBottom: "10px" }}
                 />
-                <Skeleton
-                  variant="text"
-                  width="150px"
-                />
+                <Skeleton variant="text" width="150px" />
               </CardContent>
             </Card>
           </Grid>
           <Grid xs={4}>
-            <Card
-              variant="outlined"
-              sx={{ height: "100%", padding: 0 }}
-            >
+            <Card variant="outlined" sx={{ height: "100%", padding: 0 }}>
               <CardContent
                 sx={{
                   display: "flex",
@@ -508,18 +429,12 @@ export const CloudView: React.FC = () => {
                   width="50px"
                   sx={{ marginBottom: "10px" }}
                 />
-                <Skeleton
-                  variant="text"
-                  width="150px"
-                />
+                <Skeleton variant="text" width="150px" />
               </CardContent>
             </Card>
           </Grid>
           <Grid xs={4}>
-            <Card
-              variant="outlined"
-              sx={{ height: "100%", padding: 0 }}
-            >
+            <Card variant="outlined" sx={{ height: "100%", padding: 0 }}>
               <CardContent
                 sx={{
                   display: "flex",
@@ -544,18 +459,12 @@ export const CloudView: React.FC = () => {
                   width="50px"
                   sx={{ marginBottom: "10px" }}
                 />
-                <Skeleton
-                  variant="text"
-                  width="150px"
-                />
+                <Skeleton variant="text" width="150px" />
               </CardContent>
             </Card>
           </Grid>
           <Grid xs={4}>
-            <Card
-              variant="outlined"
-              sx={{ height: "100%", padding: 0 }}
-            >
+            <Card variant="outlined" sx={{ height: "100%", padding: 0 }}>
               <CardContent
                 sx={{
                   display: "flex",
@@ -580,18 +489,12 @@ export const CloudView: React.FC = () => {
                   width="50px"
                   sx={{ marginBottom: "10px" }}
                 />
-                <Skeleton
-                  variant="text"
-                  width="150px"
-                />
+                <Skeleton variant="text" width="150px" />
               </CardContent>
             </Card>
           </Grid>
           <Grid xs={4}>
-            <Card
-              variant="outlined"
-              sx={{ height: "100%", padding: 0 }}
-            >
+            <Card variant="outlined" sx={{ height: "100%", padding: 0 }}>
               <CardContent
                 sx={{
                   display: "flex",
@@ -616,18 +519,12 @@ export const CloudView: React.FC = () => {
                   width="50px"
                   sx={{ marginBottom: "10px" }}
                 />
-                <Skeleton
-                  variant="text"
-                  width="150px"
-                />
+                <Skeleton variant="text" width="150px" />
               </CardContent>
             </Card>
           </Grid>
           <Grid xs={4}>
-            <Card
-              variant="outlined"
-              sx={{ height: "100%", padding: 0 }}
-            >
+            <Card variant="outlined" sx={{ height: "100%", padding: 0 }}>
               <CardContent
                 sx={{
                   display: "flex",
@@ -652,18 +549,12 @@ export const CloudView: React.FC = () => {
                   width="50px"
                   sx={{ marginBottom: "10px" }}
                 />
-                <Skeleton
-                  variant="text"
-                  width="150px"
-                />
+                <Skeleton variant="text" width="150px" />
               </CardContent>
             </Card>
           </Grid>
           <Grid xs={4}>
-            <Card
-              variant="outlined"
-              sx={{ height: "100%", padding: 0 }}
-            >
+            <Card variant="outlined" sx={{ height: "100%", padding: 0 }}>
               <CardContent
                 sx={{
                   display: "flex",
@@ -688,10 +579,7 @@ export const CloudView: React.FC = () => {
                   width="50px"
                   sx={{ marginBottom: "10px" }}
                 />
-                <Skeleton
-                  variant="text"
-                  width="150px"
-                />
+                <Skeleton variant="text" width="150px" />
               </CardContent>
             </Card>
           </Grid>

@@ -79,31 +79,17 @@ export const Trains: React.FC = () => {
 
   return (
     <Container sx={{ paddingTop: "50px" }}>
-      <Card
-        variant="outlined"
-        sx={{ marginBottom: "30px" }}
-      >
+      <Card variant="outlined" sx={{ marginBottom: "30px" }}>
         <CardContent>
-          <Grid
-            container
-            display="flex"
-            alignItems="center"
-          >
+          <Grid container display="flex" alignItems="center">
             <Grid xs>
-              <Typography
-                level="h2"
-                marginBottom="5px"
-                fontWeight={600}
-              >
+              <Typography level="h2" marginBottom="5px" fontWeight={600}>
                 Trains
               </Typography>
             </Grid>
             <Grid>
               <IconButton size="sm">
-                <GiCargoCrate
-                  size="22px"
-                  color="rgba(255,255,255,0.1)"
-                />
+                <GiCargoCrate size="22px" color="rgba(255,255,255,0.1)" />
               </IconButton>
             </Grid>
           </Grid>
@@ -153,10 +139,7 @@ export const Trains: React.FC = () => {
                 alignItems="center"
               >
                 <Grid xs={3}>
-                  <Card
-                    variant="outlined"
-                    sx={{ position: "relative" }}
-                  >
+                  <Card variant="outlined" sx={{ position: "relative" }}>
                     {previousStation && nextStation ? (
                       <CardContent>
                         <GiCargoCrate size="36px" />
@@ -181,11 +164,7 @@ export const Trains: React.FC = () => {
                           </Typography>
                         </Stack>
 
-                        <Grid
-                          container
-                          display="flex"
-                          alignItems="center"
-                        >
+                        <Grid container display="flex" alignItems="center">
                           <Grid xs>
                             <Typography sx={{ color: "rgba(255,255,255,0.5)" }}>
                               Current State
@@ -275,10 +254,7 @@ export const Trains: React.FC = () => {
                         >
                           {train.name}
                         </Typography>
-                        <Grid
-                          container
-                          sx={{ marginBottom: "15px" }}
-                        >
+                        <Grid container sx={{ marginBottom: "15px" }}>
                           <Grid>
                             {!train.isDerailed ? (
                               <Chip
@@ -401,10 +377,7 @@ export const Trains: React.FC = () => {
                 <Grid xs={1} />
 
                 <Grid xs={3}>
-                  <Card
-                    variant="outlined"
-                    sx={{ position: "relative" }}
-                  >
+                  <Card variant="outlined" sx={{ position: "relative" }}>
                     {previousStation && nextStation ? (
                       <CardContent>
                         <Stack alignItems="center">
@@ -427,11 +400,7 @@ export const Trains: React.FC = () => {
                           </Typography>
                         </Stack>
 
-                        <Grid
-                          container
-                          display="flex"
-                          alignItems="center"
-                        >
+                        <Grid container display="flex" alignItems="center">
                           <Grid xs>
                             <Typography sx={{ color: "rgba(255,255,255,0.5)" }}>
                               Status
@@ -513,10 +482,7 @@ export const Trains: React.FC = () => {
           alignItems="center"
         >
           <Grid xs={3}>
-            <Card
-              variant="outlined"
-              sx={{ position: "relative" }}
-            >
+            <Card variant="outlined" sx={{ position: "relative" }}>
               <CardContent>
                 <Stack alignItems="center">
                   <Skeleton
@@ -531,27 +497,17 @@ export const Trains: React.FC = () => {
                     height="30px"
                     sx={{ marginY: "10px" }}
                   />
-                  <Skeleton
-                    variant="text"
-                    width="80px"
-                  />
+                  <Skeleton variant="text" width="80px" />
                 </Stack>
 
-                <Grid
-                  container
-                  display="flex"
-                  alignItems="center"
-                >
+                <Grid container display="flex" alignItems="center">
                   <Grid xs>
                     <Typography sx={{ color: "rgba(255,255,255,0.5)" }}>
                       Status
                     </Typography>
                   </Grid>
                   <Grid>
-                    <Skeleton
-                      variant="text"
-                      width="60px"
-                    />
+                    <Skeleton variant="text" width="60px" />
                   </Grid>
                 </Grid>
                 <Grid container>
@@ -561,10 +517,7 @@ export const Trains: React.FC = () => {
                     </Typography>
                   </Grid>
                   <Grid>
-                    <Skeleton
-                      variant="text"
-                      width="40px"
-                    />
+                    <Skeleton variant="text" width="40px" />
                   </Grid>
                 </Grid>
               </CardContent>
@@ -590,17 +543,11 @@ export const Trains: React.FC = () => {
                     sx={{ marginBottom: "15px", marginTop: "10px" }}
                   >
                     <Grid>
-                      <Skeleton
-                        variant="text"
-                        width="60px"
-                      />
+                      <Skeleton variant="text" width="60px" />
                     </Grid>
 
                     <Grid>
-                      <Skeleton
-                        variant="text"
-                        width="75px"
-                      />
+                      <Skeleton variant="text" width="75px" />
                     </Grid>
                   </Grid>
                 </Stack>
@@ -612,10 +559,7 @@ export const Trains: React.FC = () => {
                     </Typography>
                   </Grid>
                   <Grid>
-                    <Skeleton
-                      variant="text"
-                      width="70px"
-                    />
+                    <Skeleton variant="text" width="70px" />
                   </Grid>
                 </Grid>
                 <Grid container>
@@ -625,10 +569,7 @@ export const Trains: React.FC = () => {
                     </Typography>
                   </Grid>
                   <Grid>
-                    <Skeleton
-                      variant="text"
-                      width="80px"
-                    />
+                    <Skeleton variant="text" width="80px" />
                   </Grid>
                 </Grid>
                 <Grid container>
@@ -638,10 +579,7 @@ export const Trains: React.FC = () => {
                     </Typography>
                   </Grid>
                   <Grid>
-                    <Skeleton
-                      variant="text"
-                      width="50px"
-                    />
+                    <Skeleton variant="text" width="50px" />
                   </Grid>
                 </Grid>
               </CardContent>
@@ -651,10 +589,7 @@ export const Trains: React.FC = () => {
           <Grid xs={1} />
 
           <Grid xs={3}>
-            <Card
-              variant="outlined"
-              sx={{ position: "relative" }}
-            >
+            <Card variant="outlined" sx={{ position: "relative" }}>
               <CardContent>
                 <Stack alignItems="center">
                   <Skeleton
@@ -669,27 +604,17 @@ export const Trains: React.FC = () => {
                     height="30px"
                     sx={{ marginY: "10px" }}
                   />
-                  <Skeleton
-                    variant="text"
-                    width="80px"
-                  />
+                  <Skeleton variant="text" width="80px" />
                 </Stack>
 
-                <Grid
-                  container
-                  display="flex"
-                  alignItems="center"
-                >
+                <Grid container display="flex" alignItems="center">
                   <Grid xs>
                     <Typography sx={{ color: "rgba(255,255,255,0.5)" }}>
                       Status
                     </Typography>
                   </Grid>
                   <Grid>
-                    <Skeleton
-                      variant="text"
-                      width="60px"
-                    />
+                    <Skeleton variant="text" width="60px" />
                   </Grid>
                 </Grid>
                 <Grid container>
@@ -699,10 +624,7 @@ export const Trains: React.FC = () => {
                     </Typography>
                   </Grid>
                   <Grid>
-                    <Skeleton
-                      variant="text"
-                      width="40px"
-                    />
+                    <Skeleton variant="text" width="40px" />
                   </Grid>
                 </Grid>
               </CardContent>

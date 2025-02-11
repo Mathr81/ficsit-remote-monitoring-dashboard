@@ -44,18 +44,11 @@ export const AwesomeSink: React.FC = () => {
   if (sinkExploration && sinkResource) {
     return (
       <Container>
-        <Card
-          variant="outlined"
-          sx={{ marginBottom: "20px" }}
-        >
+        <Card variant="outlined" sx={{ marginBottom: "20px" }}>
           <CardContent>
             <Box>
               <Stack>
-                <Grid
-                  container
-                  spacing={2}
-                  padding={0}
-                >
+                <Grid container spacing={2} padding={0}>
                   <Grid xs>
                     <img
                       src="/assets/Building/AWESOME_Sink.png"
@@ -87,9 +80,9 @@ export const AwesomeSink: React.FC = () => {
                       padding: "5px",
                       backgroundColor: "#000",
                     },
-                    "color": "white",
-                    "padding": "10px",
-                    "overflow": "visible",
+                    color: "white",
+                    padding: "10px",
+                    overflow: "visible",
                   }}
                 >
                   <div
@@ -106,11 +99,7 @@ export const AwesomeSink: React.FC = () => {
           </CardContent>
         </Card>
 
-        <Grid
-          container
-          padding={0}
-          spacing={2}
-        >
+        <Grid container padding={0} spacing={2}>
           <Grid xs={4}>
             <Card variant="outlined">
               <CardContent>
@@ -155,10 +144,7 @@ export const AwesomeSink: React.FC = () => {
 
   return (
     <Container>
-      <Card
-        variant="outlined"
-        sx={{ marginBottom: "20px", opacity: 0.5 }}
-      >
+      <Card variant="outlined" sx={{ marginBottom: "20px", opacity: 0.5 }}>
         <CardContent>
           <Box>
             <Stack>
@@ -212,12 +198,7 @@ export const AwesomeSink: React.FC = () => {
         </CardContent>
       </Card>
 
-      <Grid
-        container
-        padding={0}
-        sx={{ opacity: 0.5 }}
-        spacing={2}
-      >
+      <Grid container padding={0} sx={{ opacity: 0.5 }} spacing={2}>
         <Grid xs={4}>
           <Card variant="outlined">
             <CardContent>
@@ -227,10 +208,7 @@ export const AwesomeSink: React.FC = () => {
                 width="80px"
                 height="40px"
               />
-              <Skeleton
-                variant="text"
-                width="120px"
-              />
+              <Skeleton variant="text" width="120px" />
             </CardContent>
           </Card>
         </Grid>
@@ -243,10 +221,7 @@ export const AwesomeSink: React.FC = () => {
                 width="80px"
                 height="40px"
               />
-              <Skeleton
-                variant="text"
-                width="120px"
-              />
+              <Skeleton variant="text" width="120px" />
             </CardContent>
           </Card>
         </Grid>
@@ -259,10 +234,7 @@ export const AwesomeSink: React.FC = () => {
                 width="80px"
                 height="40px"
               />
-              <Skeleton
-                variant="text"
-                width="120px"
-              />
+              <Skeleton variant="text" width="120px" />
             </CardContent>
           </Card>
         </Grid>

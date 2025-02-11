@@ -121,11 +121,7 @@ export const Sidebar: React.FC = () => {
     >
       <Stack spacing={isFullsize ? 2 : 1}>
         {isFullsize ? (
-          <Grid
-            container
-            display="flex"
-            alignItems="center"
-          >
+          <Grid container display="flex" alignItems="center">
             <Grid marginRight="6px">
               <IconButton
                 onClick={() => {
@@ -142,10 +138,7 @@ export const Sidebar: React.FC = () => {
             </Grid>
           </Grid>
         ) : (
-          <Tooltip
-            placement="right"
-            title="Expand Menu"
-          >
+          <Tooltip placement="right" title="Expand Menu">
             <IconButton
               size="lg"
               onClick={() => {
@@ -184,20 +177,9 @@ export const Sidebar: React.FC = () => {
                   );
                 }
                 return (
-                  <Tooltip
-                    key={link.path}
-                    placement="right"
-                    title={link.label}
-                  >
-                    <Link
-                      style={{ textDecoration: "none" }}
-                      to={link.path}
-                    >
-                      <IconButton
-                        size="lg"
-                        color="neutral"
-                        variant="plain"
-                      >
+                  <Tooltip key={link.path} placement="right" title={link.label}>
+                    <Link style={{ textDecoration: "none" }} to={link.path}>
+                      <IconButton size="lg" color="neutral" variant="plain">
                         {link.icon}
                       </IconButton>
                     </Link>

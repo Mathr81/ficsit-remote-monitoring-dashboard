@@ -38,11 +38,7 @@ export const ProductionCard: React.FC<Props> = ({ product }) => {
         >
           {product.name}
         </Typography>
-        <Grid
-          spacing={2}
-          sx={{ paddingTop: "2px" }}
-          container
-        >
+        <Grid spacing={2} sx={{ paddingTop: "2px" }} container>
           <Grid>
             <img
               src={getImageHelper(product.className)}
@@ -51,11 +47,7 @@ export const ProductionCard: React.FC<Props> = ({ product }) => {
             />
           </Grid>
           <Grid xs>
-            <Grid
-              spacing={0}
-              container
-              sx={{ paddingTop: 0 }}
-            >
+            <Grid spacing={0} container sx={{ paddingTop: 0 }}>
               <Grid xs>
                 <Typography level="body-md">Current Production</Typography>
               </Grid>
@@ -69,11 +61,7 @@ export const ProductionCard: React.FC<Props> = ({ product }) => {
                 </Typography>
               </Grid>
             </Grid>
-            <Grid
-              spacing={0}
-              container
-              sx={{ paddingTop: 0 }}
-            >
+            <Grid spacing={0} container sx={{ paddingTop: 0 }}>
               <Grid xs>
                 <Typography level="body-md">Max. Production</Typography>
               </Grid>
@@ -87,11 +75,7 @@ export const ProductionCard: React.FC<Props> = ({ product }) => {
                 </Typography>
               </Grid>
             </Grid>
-            <Grid
-              spacing={0}
-              container
-              sx={{ paddingTop: 0 }}
-            >
+            <Grid spacing={0} container sx={{ paddingTop: 0 }}>
               <Grid xs>
                 <Typography level="body-md">Efficency Production</Typography>
               </Grid>
@@ -99,11 +83,7 @@ export const ProductionCard: React.FC<Props> = ({ product }) => {
                 <Typography>{product.usingPercent.toFixed(2)} %</Typography>
               </Grid>
             </Grid>
-            <Grid
-              spacing={0}
-              container
-              sx={{ paddingY: 0 }}
-            >
+            <Grid spacing={0} container sx={{ paddingY: 0 }}>
               <Grid xs>
                 <Typography level="body-md">Output Inventory</Typography>
               </Grid>

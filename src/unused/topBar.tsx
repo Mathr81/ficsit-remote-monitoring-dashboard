@@ -19,14 +19,14 @@ import { TbTrain } from "react-icons/tb";
 import { Link } from "react-router-dom";
 
 const Search = styled("div")(({ theme }) => ({
-  "position": "relative",
-  "borderRadius": theme.shape.borderRadius,
-  "backgroundColor": alpha(theme.palette.common.white, 0.15),
+  position: "relative",
+  borderRadius: theme.shape.borderRadius,
+  backgroundColor: alpha(theme.palette.common.white, 0.15),
   "&:hover": {
     backgroundColor: alpha(theme.palette.common.white, 0.25),
   },
-  "marginLeft": 0,
-  "width": "100%",
+  marginLeft: 0,
+  width: "100%",
   [theme.breakpoints.up("sm")]: {
     marginLeft: theme.spacing(1),
     width: "auto",
@@ -44,7 +44,7 @@ const SearchIconWrapper = styled("div")(({ theme }) => ({
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  "color": "inherit",
+  color: "inherit",
   "& .MuiInputBase-input": {
     padding: theme.spacing(1, 1, 1, 0),
     // vertical padding + font size from searchIcon
@@ -52,7 +52,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     transition: theme.transitions.create("width"),
     width: "100%",
     [theme.breakpoints.up("sm")]: {
-      "width": "12ch",
+      width: "12ch",
       "&:focus": {
         width: "20ch",
       },
@@ -63,10 +63,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 const SearchAppBar: React.FC = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar
-        position="static"
-        sx={{ borderRadius: 0 }}
-      >
+      <AppBar position="static" sx={{ borderRadius: 0 }}>
         <Toolbar>
           {/* <IconButton
             size="large"
@@ -86,10 +83,7 @@ const SearchAppBar: React.FC = () => {
             Ficsit Remote Monitoring
           </Typography>
 
-          <Stack
-            display="flex"
-            flexDirection="row"
-          >
+          <Stack display="flex" flexDirection="row">
             <Link
               style={{ textDecoration: "none", marginRight: "10px" }}
               to="/players"
@@ -101,10 +95,7 @@ const SearchAppBar: React.FC = () => {
               style={{ textDecoration: "none", marginRight: "10px" }}
               to="/power"
             >
-              <Button
-                color="primary"
-                startIcon={<GiPowerGenerator />}
-              >
+              <Button color="primary" startIcon={<GiPowerGenerator />}>
                 Power Screen
               </Button>
             </Link>

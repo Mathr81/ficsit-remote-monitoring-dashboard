@@ -10,12 +10,7 @@ type Props = {
 
 export const FactoryTypeCol: React.FC<Props> = ({ factorys }) => {
   return (
-    <Grid
-      xs={12}
-      md={6}
-      lg={4}
-      xl={4}
-    >
+    <Grid xs={12} md={6} lg={4} xl={4}>
       <Card sx={{ padding: "20px" }}>
         <CardContent>
           <Grid
@@ -75,27 +70,17 @@ export const FactoryTypeCol: React.FC<Props> = ({ factorys }) => {
                           {factory.IsConfigured === true &&
                           factory.IsProducing === true &&
                           factory.IsPaused === false ? (
-                            <Chip
-                              size="sm"
-                              color="success"
-                            >
+                            <Chip size="sm" color="success">
                               ON
                             </Chip>
                           ) : (
-                            <Chip
-                              size="sm"
-                              color="danger"
-                            >
+                            <Chip size="sm" color="danger">
                               OFF
                             </Chip>
                           )}
                         </Grid>
                       </Grid>
-                      <Grid
-                        container
-                        display="flex"
-                        alignItems="center"
-                      >
+                      <Grid container display="flex" alignItems="center">
                         <Grid xs>
                           <Typography level="body-md">Producing:</Typography>
                         </Grid>

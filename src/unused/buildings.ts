@@ -1,23 +1,23 @@
 const factoryRefs: Record<string, any> = {
-  "Smeltery": {
+  Smeltery: {
     image: "Buildings/SmelterMk1_256.png",
   },
-  "Constructor": {
+  Constructor: {
     image: "Buildings/ConstructorMk1_256.png",
   },
-  "Assembler": {
+  Assembler: {
     image: "Buildings/AssemblerMk1_256.png",
   },
-  "Foundry": {
+  Foundry: {
     image: "Buildings/Foundry_256.png",
   },
-  "Refinery": {
+  Refinery: {
     image: "Buildings/IconDesc_OilRefinery_256.png",
   },
-  "Manufacturer": {
+  Manufacturer: {
     image: "Buildings/Manufacturer_256.png",
   },
-  "Blender": {
+  Blender: {
     image: "Buildings/IconDesc_Blender_256.png",
   },
   "Awesome Sink": {

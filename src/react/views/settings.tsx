@@ -21,10 +21,7 @@ export const Settings: React.FC = () => {
 
   return (
     <Container>
-      <Card
-        variant="outlined"
-        sx={{ marginTop: "40px", marginBottom: "30px" }}
-      >
+      <Card variant="outlined" sx={{ marginTop: "40px", marginBottom: "30px" }}>
         <CardContent>
           <Grid container>
             <Grid xs>
@@ -33,11 +30,7 @@ export const Settings: React.FC = () => {
           </Grid>
         </CardContent>
       </Card>
-      <Grid
-        container
-        spacing={2}
-        sx={{ marginBottom: "30px" }}
-      >
+      <Grid container spacing={2} sx={{ marginBottom: "30px" }}>
         <Grid xs={6}>
           <Card variant="outlined">
             <CardContent>
@@ -95,10 +88,7 @@ export const Settings: React.FC = () => {
             <CardContent>
               <Typography level="h4">Preferences</Typography>
 
-              <Typography
-                level="body-md"
-                marginTop="15px"
-              >
+              <Typography level="body-md" marginTop="15px">
                 More preferences coming soon.
               </Typography>
             </CardContent>
@@ -107,10 +97,7 @@ export const Settings: React.FC = () => {
       </Grid>
       <Card variant="outlined">
         <CardContent>
-          <Typography
-            startDecorator={<BsExclamationCircle />}
-            level="body-sm"
-          >
+          <Typography startDecorator={<BsExclamationCircle />} level="body-sm">
             All Changes have immidiate effect.
           </Typography>
         </CardContent>

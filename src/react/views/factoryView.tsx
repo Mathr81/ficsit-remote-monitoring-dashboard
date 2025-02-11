@@ -51,22 +51,11 @@ export const DetailedFactoryView: React.FC = () => {
 
   return (
     <Container sx={{ paddingTop: "50px" }}>
-      <Card
-        variant="outlined"
-        sx={{ marginBottom: "30px" }}
-      >
+      <Card variant="outlined" sx={{ marginBottom: "30px" }}>
         <CardContent>
-          <Grid
-            container
-            display="flex"
-            alignItems="center"
-          >
+          <Grid container display="flex" alignItems="center">
             <Grid xs>
-              <Typography
-                level="h2"
-                marginBottom="5px"
-                fontWeight={600}
-              >
+              <Typography level="h2" marginBottom="5px" fontWeight={600}>
                 {currentFactoryName}
               </Typography>
             </Grid>
@@ -75,29 +64,16 @@ export const DetailedFactoryView: React.FC = () => {
       </Card>
 
       {factories ? (
-        <Grid
-          container
-          spacing={3}
-        >
+        <Grid container spacing={3}>
           {factories.map((factory) => {
             return (
-              <Grid
-                xs={4}
-                key={factory.id}
-              >
+              <Grid xs={4} key={factory.id}>
                 <Card variant="outlined">
                   <CardContent>
-                    <Grid
-                      padding={0}
-                      container
-                    >
+                    <Grid padding={0} container>
                       <Grid xs>
                         {factory.isProducing ? (
-                          <Chip
-                            size="sm"
-                            color="success"
-                            variant="soft"
-                          >
+                          <Chip size="sm" color="success" variant="soft">
                             Producing ...
                           </Chip>
                         ) : (
@@ -117,19 +93,11 @@ export const DetailedFactoryView: React.FC = () => {
                       </Grid>
                       <Grid>
                         {factory.isConfigured ? (
-                          <Chip
-                            size="sm"
-                            color="neutral"
-                            variant="soft"
-                          >
+                          <Chip size="sm" color="neutral" variant="soft">
                             Configured
                           </Chip>
                         ) : (
-                          <Chip
-                            size="sm"
-                            color="danger"
-                            variant="soft"
-                          >
+                          <Chip size="sm" color="danger" variant="soft">
                             Not Configured
                           </Chip>
                         )}
@@ -150,11 +118,7 @@ export const DetailedFactoryView: React.FC = () => {
                       </Typography>
                       {factory.isConfigured && (
                         <Box>
-                          <Grid
-                            spacing={0}
-                            container
-                            sx={{ marginTop: "5px" }}
-                          >
+                          <Grid spacing={0} container sx={{ marginTop: "5px" }}>
                             <Grid>
                               {factory.ingredients.map((ingredient) => (
                                 <img
@@ -218,10 +182,7 @@ export const DetailedFactoryView: React.FC = () => {
                           );
                         })}
 
-                        <Typography
-                          marginBottom="15px"
-                          marginTop="30px"
-                        >
+                        <Typography marginBottom="15px" marginTop="30px">
                           Products
                         </Typography>
                         {factory.products.map((product) => {
@@ -241,11 +202,7 @@ export const DetailedFactoryView: React.FC = () => {
           })}
         </Grid>
       ) : (
-        <Grid
-          container
-          spacing={3}
-          sx={{ opacity: 0.5 }}
-        >
+        <Grid container spacing={3} sx={{ opacity: 0.5 }}>
           <Grid xs={4}>
             <Card variant="outlined">
               <CardContent>
@@ -275,10 +232,7 @@ export const DetailedFactoryView: React.FC = () => {
                       <Typography>PRODUCTION</Typography>
                     </Grid>
                     <Grid>
-                      <Skeleton
-                        variant="text"
-                        width="80px"
-                      />
+                      <Skeleton variant="text" width="80px" />
                     </Grid>
                   </Grid>
                   <Skeleton
@@ -287,10 +241,7 @@ export const DetailedFactoryView: React.FC = () => {
                     height="140px"
                   />
 
-                  <Typography
-                    marginBottom="15px"
-                    marginTop="30px"
-                  >
+                  <Typography marginBottom="15px" marginTop="30px">
                     INGREDIENTS
                   </Typography>
                   <Skeleton
@@ -331,10 +282,7 @@ export const DetailedFactoryView: React.FC = () => {
                       <Typography>PRODUCTION</Typography>
                     </Grid>
                     <Grid>
-                      <Skeleton
-                        variant="text"
-                        width="80px"
-                      />
+                      <Skeleton variant="text" width="80px" />
                     </Grid>
                   </Grid>
                   <Skeleton
@@ -343,10 +291,7 @@ export const DetailedFactoryView: React.FC = () => {
                     height="140px"
                   />
 
-                  <Typography
-                    marginBottom="15px"
-                    marginTop="30px"
-                  >
+                  <Typography marginBottom="15px" marginTop="30px">
                     INGREDIENTS
                   </Typography>
                   <Skeleton
@@ -387,10 +332,7 @@ export const DetailedFactoryView: React.FC = () => {
                       <Typography>PRODUCTION</Typography>
                     </Grid>
                     <Grid>
-                      <Skeleton
-                        variant="text"
-                        width="80px"
-                      />
+                      <Skeleton variant="text" width="80px" />
                     </Grid>
                   </Grid>
                   <Skeleton
@@ -399,10 +341,7 @@ export const DetailedFactoryView: React.FC = () => {
                     height="140px"
                   />
 
-                  <Typography
-                    marginBottom="15px"
-                    marginTop="30px"
-                  >
+                  <Typography marginBottom="15px" marginTop="30px">
                     INGREDIENTS
                   </Typography>
                   <Skeleton

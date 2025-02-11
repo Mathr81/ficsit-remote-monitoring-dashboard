@@ -7,6 +7,6 @@ export const getImageHelper = (className: GameClassNamesEnum): string => {
   if (!item) {
     return `/assets/Icon/notFound.png`;
   }
-  
+
   return `/assets/${item.category}/${item.name}.png`;
 };

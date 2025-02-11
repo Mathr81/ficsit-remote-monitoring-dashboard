@@ -54,10 +54,7 @@ export const Start: React.FC = () => {
 
   return (
     <Container sx={{ paddingTop: "50px" }}>
-      <Typography
-        marginBottom="10px"
-        level="h1"
-      >
+      <Typography marginBottom="10px" level="h1">
         Welcome Pioneer!
       </Typography>
       <Typography
@@ -69,11 +66,7 @@ export const Start: React.FC = () => {
         Satisfactory Remote Monitoring Dashboard Version 1.0
       </Typography>
 
-      <Grid
-        spacing={3}
-        container
-        sx={{ height: "100%", position: "relative" }}
-      >
+      <Grid spacing={3} container sx={{ height: "100%", position: "relative" }}>
         <Grid xs={6}>
           {itemSelection && (
             <>
@@ -121,15 +114,9 @@ export const Start: React.FC = () => {
                   </Button>
                 </ModalDialog>
               </Modal>
-              <Card
-                sx={{ marginBottom: "20px" }}
-                variant="outlined"
-              >
+              <Card sx={{ marginBottom: "20px" }} variant="outlined">
                 <CardContent>
-                  <Grid
-                    container
-                    padding={0}
-                  >
+                  <Grid container padding={0}>
                     <Grid xs>
                       <Typography level="h4">
                         {itemSelection.length} Favorite Items
@@ -165,19 +152,11 @@ export const Start: React.FC = () => {
                 </CardContent>
               </Card>
               {itemSelection && worldInv && (
-                <Grid
-                  container
-                  paddingY={0}
-                  px={0}
-                  spacing={2}
-                >
+                <Grid container paddingY={0} px={0} spacing={2}>
                   {worldInv.map((item) => {
                     if (itemSelection.includes(item.name)) {
                       return (
-                        <Grid
-                          key={item.className}
-                          xs={4}
-                        >
+                        <Grid key={item.className} xs={4}>
                           <Card
                             variant="outlined"
                             sx={{ height: "100%", padding: 0 }}
@@ -195,10 +174,7 @@ export const Start: React.FC = () => {
                                 alt=""
                                 style={{ height: "70px", width: "70px" }}
                               />
-                              <Typography
-                                marginBottom="5px"
-                                textAlign="center"
-                              >
+                              <Typography marginBottom="5px" textAlign="center">
                                 {item.name}
                               </Typography>
                               <Typography level="body-md">
@@ -247,10 +223,7 @@ export const Start: React.FC = () => {
                           width="120px"
                           height="20px"
                         />
-                        <Skeleton
-                          variant="text"
-                          width="60px"
-                        />
+                        <Skeleton variant="text" width="60px" />
                       </CardContent>
                     </Card>
                   </Grid>
@@ -280,10 +253,7 @@ export const Start: React.FC = () => {
                           width="120px"
                           height="20px"
                         />
-                        <Skeleton
-                          variant="text"
-                          width="60px"
-                        />
+                        <Skeleton variant="text" width="60px" />
                       </CardContent>
                     </Card>
                   </Grid>
@@ -313,10 +283,7 @@ export const Start: React.FC = () => {
                           width="120px"
                           height="20px"
                         />
-                        <Skeleton
-                          variant="text"
-                          width="60px"
-                        />
+                        <Skeleton variant="text" width="60px" />
                       </CardContent>
                     </Card>
                   </Grid>
@@ -346,10 +313,7 @@ export const Start: React.FC = () => {
                           width="120px"
                           height="20px"
                         />
-                        <Skeleton
-                          variant="text"
-                          width="60px"
-                        />
+                        <Skeleton variant="text" width="60px" />
                       </CardContent>
                     </Card>
                   </Grid>

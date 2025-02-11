@@ -44,19 +44,9 @@ export const Building: React.FC = () => {
 
   return (
     <Container sx={{ paddingTop: "50px" }}>
-      <Grid
-        container
-        display="flex"
-        alignItems="center"
-      >
-        <Grid
-          item
-          xs
-        >
-          <Typography
-            variant="h2"
-            fontWeight={600}
-          >
+      <Grid container display="flex" alignItems="center">
+        <Grid item xs>
+          <Typography variant="h2" fontWeight={600}>
             {buildingsData.building}
           </Typography>
         </Grid>
@@ -70,15 +60,8 @@ export const Building: React.FC = () => {
       </Grid>
       <Divider sx={{ margin: "20px 0" }} />
 
-      <Grid
-        container
-        spacing={2}
-        sx={{ marginBottom: "30px" }}
-      >
-        <Grid
-          item
-          xs
-        >
+      <Grid container spacing={2} sx={{ marginBottom: "30px" }}>
+        <Grid item xs>
           <Card>
             <CardHeader
               title={buildingsData.Recipe}
@@ -86,10 +69,7 @@ export const Building: React.FC = () => {
             />
           </Card>
         </Grid>
-        <Grid
-          item
-          xs
-        >
+        <Grid item xs>
           <Card>
             <CardHeader
               title={`${parseFloat(buildingsData.ManuSpeed) * 100} %`}
@@ -97,10 +77,7 @@ export const Building: React.FC = () => {
             />
           </Card>
         </Grid>
-        <Grid
-          item
-          xs
-        >
+        <Grid item xs>
           <Card>
             <CardHeader
               title={buildingsData.CircuitID}
@@ -109,25 +86,16 @@ export const Building: React.FC = () => {
           </Card>
         </Grid>
         <Tooltip title="errorText">
-          <Grid
-            item
-            xs
-          >
+          <Grid item xs>
             {buildingsData.IsConfigured === true &&
             buildingsData.IsProducing === true &&
             buildingsData.IsPaused === false ? (
               <Card sx={{ backgroundColor: theme.palette.success.main }}>
-                <CardHeader
-                  title="No Problems"
-                  subheader="Current Status"
-                />
+                <CardHeader title="No Problems" subheader="Current Status" />
               </Card>
             ) : (
               <Card sx={{ backgroundColor: theme.palette.error.main }}>
-                <CardHeader
-                  title="Broken!"
-                  subheader="Fuse Status"
-                />
+                <CardHeader title="Broken!" subheader="Fuse Status" />
               </Card>
             )}
           </Grid>
@@ -136,19 +104,10 @@ export const Building: React.FC = () => {
 
       <Divider sx={{ marginBottom: "30px" }} />
 
-      <Paper
-        elevation={1}
-        sx={{ marginBottom: "30px", padding: "20px" }}
-      >
+      <Paper elevation={1} sx={{ marginBottom: "30px", padding: "20px" }}>
         <Grid container>
-          <Grid
-            item
-            xs
-          >
-            <Typography
-              variant="h5"
-              sx={{ marginBottom: "20px" }}
-            >
+          <Grid item xs>
+            <Typography variant="h5" sx={{ marginBottom: "20px" }}>
               {buildingsData.building} produces {buildingsData.Recipe}
             </Typography>
           </Grid>
@@ -158,25 +117,13 @@ export const Building: React.FC = () => {
         </Grid>
         {buildingsData.production.map((productionItem) => {
           return (
-            <Grid
-              container
-              spacing={2}
-            >
-              <Grid
-                item
-                xs
-              >
+            <Grid container spacing={2}>
+              <Grid item xs>
                 <Card variant="outlined">
-                  <CardHeader
-                    title={productionItem.Name}
-                    subheader="Name"
-                  />
+                  <CardHeader title={productionItem.Name} subheader="Name" />
                 </Card>
               </Grid>
-              <Grid
-                item
-                xs
-              >
+              <Grid item xs>
                 <Card variant="outlined">
                   <CardHeader
                     title={parseFloat(productionItem.CurrentProd).toFixed(2)}
@@ -184,10 +131,7 @@ export const Building: React.FC = () => {
                   />
                 </Card>
               </Grid>
-              <Grid
-                item
-                xs
-              >
+              <Grid item xs>
                 <Card variant="outlined">
                   <CardHeader
                     title={parseFloat(productionItem.MaxProd).toFixed(2)}
@@ -195,10 +139,7 @@ export const Building: React.FC = () => {
                   />
                 </Card>
               </Grid>
-              <Grid
-                item
-                xs
-              >
+              <Grid item xs>
                 <Card variant="outlined">
                   <CardHeader
                     title={`${parseFloat(productionItem.ProdPercent).toFixed(2)} %`}
@@ -218,14 +159,8 @@ export const Building: React.FC = () => {
         sx={{ marginBottom: "30px", padding: "20px", paddingBottom: "5px" }}
       >
         <Grid container>
-          <Grid
-            item
-            xs
-          >
-            <Typography
-              variant="h5"
-              sx={{ marginBottom: "20px" }}
-            >
+          <Grid item xs>
+            <Typography variant="h5" sx={{ marginBottom: "20px" }}>
               {buildingsData.building} needs Ingredients:
             </Typography>
           </Grid>
@@ -235,26 +170,13 @@ export const Building: React.FC = () => {
         </Grid>
         {buildingsData.ingredients.map((productionItem) => {
           return (
-            <Grid
-              container
-              spacing={2}
-              sx={{ marginBottom: "20px" }}
-            >
-              <Grid
-                item
-                xs
-              >
+            <Grid container spacing={2} sx={{ marginBottom: "20px" }}>
+              <Grid item xs>
                 <Card variant="outlined">
-                  <CardHeader
-                    title={productionItem.Name}
-                    subheader="Name"
-                  />
+                  <CardHeader title={productionItem.Name} subheader="Name" />
                 </Card>
               </Grid>
-              <Grid
-                item
-                xs
-              >
+              <Grid item xs>
                 <Card variant="outlined">
                   <CardHeader
                     title={parseFloat(productionItem.CurrentConsumed).toFixed(
@@ -264,10 +186,7 @@ export const Building: React.FC = () => {
                   />
                 </Card>
               </Grid>
-              <Grid
-                item
-                xs
-              >
+              <Grid item xs>
                 <Card variant="outlined">
                   <CardHeader
                     title={parseFloat(productionItem.MaxConsumed).toFixed(2)}
@@ -275,10 +194,7 @@ export const Building: React.FC = () => {
                   />
                 </Card>
               </Grid>
-              <Grid
-                item
-                xs
-              >
+              <Grid item xs>
                 <Card variant="outlined">
                   <CardHeader
                     title={`${parseFloat(productionItem.ConsPercent).toFixed(2)} %`}

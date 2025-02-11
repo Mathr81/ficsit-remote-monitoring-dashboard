@@ -38,10 +38,7 @@ export const Vehicles: React.FC = () => {
             marginBottom="20px"
           >
             <Grid xs>
-              <Typography
-                level="h2"
-                fontWeight={600}
-              >
+              <Typography level="h2" fontWeight={600}>
                 All Vehicles
               </Typography>
             </Grid>
@@ -60,31 +57,21 @@ export const Vehicles: React.FC = () => {
           >
             {vehicles.map((vehicle) => {
               return (
-                <Grid
-                  key={vehicle.id}
-                  xs={3}
-                >
-                  <a
-                    href={`#${vehicle.id}`}
-                    style={{ textDecoration: "none" }}
-                  >
+                <Grid key={vehicle.id} xs={3}>
+                  <a href={`#${vehicle.id}`} style={{ textDecoration: "none" }}>
                     <Card
                       variant="outlined"
                       sx={{
-                        "position": "relative",
-                        "paddingY": 0,
+                        position: "relative",
+                        paddingY: 0,
                         "&:hover": {
                           borderColor: "var(--joy-palette-neutral-700)",
                         },
-                        "cursor": "pointer",
+                        cursor: "pointer",
                       }}
                     >
                       <CardContent>
-                        <Grid
-                          container
-                          spacing={4}
-                          sx={{ paddingX: 0 }}
-                        >
+                        <Grid container spacing={4} sx={{ paddingX: 0 }}>
                           <Grid>
                             <img
                               src={`/assets/Vehicle/${vehicle.name}.png`}
@@ -154,10 +141,7 @@ export const Vehicles: React.FC = () => {
             {vehicles.map((vehicle) => {
               if (vehicle.autopilot) return null;
               return (
-                <Grid
-                  key={vehicle.id}
-                  xs={4}
-                >
+                <Grid key={vehicle.id} xs={4}>
                   <div id={vehicle.id} />
                   <Card
                     sx={{ position: "relative", paddingBottom: 0 }}
@@ -238,19 +222,12 @@ export const Vehicles: React.FC = () => {
                             </Grid>
                           </Grid>
                         </Box>
-                        <Typography
-                          marginLeft="5px"
-                          level="body-md"
-                        >
+                        <Typography marginLeft="5px" level="body-md">
                           VehicleID: #{vehicle.id}
                         </Typography>
                       </Stack>
 
-                      <Grid
-                        container
-                        spacing={2}
-                        sx={{ paddingX: 0 }}
-                      >
+                      <Grid container spacing={2} sx={{ paddingX: 0 }}>
                         <Grid xs>
                           <Grid container>
                             <Grid xs>
@@ -332,10 +309,7 @@ export const Vehicles: React.FC = () => {
                                   style={{ height: "30px", width: "30px" }}
                                 />
                               ) : (
-                                <BsXCircle
-                                  color="red"
-                                  size="25px"
-                                />
+                                <BsXCircle color="red" size="25px" />
                               )}
                             </Grid>
                           </Grid>
@@ -356,17 +330,11 @@ export const Vehicles: React.FC = () => {
           >
             Autopiloted Vehicles
           </Typography>
-          <Grid
-            container
-            spacing={3}
-          >
+          <Grid container spacing={3}>
             {vehicles.map((vehicle, index: number) => {
               if (!vehicle.autopilot) return null;
               return (
-                <Grid
-                  key={vehicle.id}
-                  xs={4}
-                >
+                <Grid key={vehicle.id} xs={4}>
                   <div id={index.toString()} />
                   <Card
                     sx={{ position: "relative", paddingBottom: 0 }}
@@ -447,19 +415,12 @@ export const Vehicles: React.FC = () => {
                             </Grid>
                           </Grid>
                         </Box>
-                        <Typography
-                          marginLeft="5px"
-                          level="body-md"
-                        >
+                        <Typography marginLeft="5px" level="body-md">
                           VehicleID: #{vehicle.id}
                         </Typography>
                       </Stack>
 
-                      <Grid
-                        container
-                        spacing={2}
-                        sx={{ paddingX: 0 }}
-                      >
+                      <Grid container spacing={2} sx={{ paddingX: 0 }}>
                         <Grid xs>
                           <Grid container>
                             <Grid xs>
@@ -562,10 +523,7 @@ export const Vehicles: React.FC = () => {
                                   style={{ height: "30px", width: "30px" }}
                                 />
                               ) : (
-                                <BsXCircle
-                                  color="red"
-                                  size="25px"
-                                />
+                                <BsXCircle color="red" size="25px" />
                               )}
                             </Grid>
                           </Grid>
@@ -588,22 +546,11 @@ export const Vehicles: React.FC = () => {
             alignItems="center"
           >
             <Grid xs={3}>
-              <Card
-                variant="outlined"
-                sx={{}}
-              >
+              <Card variant="outlined" sx={{}}>
                 <CardContent>
-                  <Grid
-                    container
-                    spacing={4}
-                    sx={{ paddingX: 0 }}
-                  >
+                  <Grid container spacing={4} sx={{ paddingX: 0 }}>
                     <Grid>
-                      <Skeleton
-                        variant="circular"
-                        height="50px"
-                        width="50px"
-                      />
+                      <Skeleton variant="circular" height="50px" width="50px" />
                     </Grid>
 
                     <Grid xs>
@@ -614,32 +561,18 @@ export const Vehicles: React.FC = () => {
                           width="70px"
                         />
                       </Box>
-                      <Skeleton
-                        variant="text"
-                        width="50px"
-                      />
+                      <Skeleton variant="text" width="50px" />
                     </Grid>
                   </Grid>
                 </CardContent>
               </Card>
             </Grid>
             <Grid xs={3}>
-              <Card
-                variant="outlined"
-                sx={{}}
-              >
+              <Card variant="outlined" sx={{}}>
                 <CardContent>
-                  <Grid
-                    container
-                    spacing={4}
-                    sx={{ paddingX: 0 }}
-                  >
+                  <Grid container spacing={4} sx={{ paddingX: 0 }}>
                     <Grid>
-                      <Skeleton
-                        variant="circular"
-                        height="50px"
-                        width="50px"
-                      />
+                      <Skeleton variant="circular" height="50px" width="50px" />
                     </Grid>
 
                     <Grid xs>
@@ -650,10 +583,7 @@ export const Vehicles: React.FC = () => {
                           width="70px"
                         />
                       </Box>
-                      <Skeleton
-                        variant="text"
-                        width="50px"
-                      />
+                      <Skeleton variant="text" width="50px" />
                     </Grid>
                   </Grid>
                 </CardContent>
@@ -689,11 +619,7 @@ export const Vehicles: React.FC = () => {
                     justifyContent="center"
                     flexDirection="column"
                   >
-                    <Skeleton
-                      variant="circular"
-                      height="100px"
-                      width="100px"
-                    />
+                    <Skeleton variant="circular" height="100px" width="100px" />
                     <Box sx={{ position: "relative" }}>
                       <Grid
                         container
@@ -717,17 +643,10 @@ export const Vehicles: React.FC = () => {
                         </Grid>
                       </Grid>
                     </Box>
-                    <Skeleton
-                      variant="text"
-                      width="50px"
-                    />
+                    <Skeleton variant="text" width="50px" />
                   </Stack>
 
-                  <Grid
-                    container
-                    spacing={2}
-                    sx={{ paddingX: 0 }}
-                  >
+                  <Grid container spacing={2} sx={{ paddingX: 0 }}>
                     <Grid xs>
                       <Grid container>
                         <Grid xs>
@@ -736,10 +655,7 @@ export const Vehicles: React.FC = () => {
                           </Typography>
                         </Grid>
                         <Grid>
-                          <Skeleton
-                            variant="text"
-                            width="120px"
-                          />
+                          <Skeleton variant="text" width="120px" />
                         </Grid>
                       </Grid>
                       <Grid container>
@@ -749,10 +665,7 @@ export const Vehicles: React.FC = () => {
                           </Typography>
                         </Grid>
                         <Grid>
-                          <Skeleton
-                            variant="text"
-                            width="100px"
-                          />
+                          <Skeleton variant="text" width="100px" />
                         </Grid>
                       </Grid>
                       <Grid container>
@@ -762,10 +675,7 @@ export const Vehicles: React.FC = () => {
                           </Typography>
                         </Grid>
                         <Grid>
-                          <Skeleton
-                            variant="text"
-                            width="80px"
-                          />
+                          <Skeleton variant="text" width="80px" />
                         </Grid>
                       </Grid>
                       <Grid container>
@@ -775,10 +685,7 @@ export const Vehicles: React.FC = () => {
                           </Typography>
                         </Grid>
                         <Grid>
-                          <Skeleton
-                            variant="text"
-                            width="110px"
-                          />
+                          <Skeleton variant="text" width="110px" />
                         </Grid>
                       </Grid>
                       <Grid container>
@@ -788,10 +695,7 @@ export const Vehicles: React.FC = () => {
                           </Typography>
                         </Grid>
                         <Grid>
-                          <Skeleton
-                            variant="text"
-                            width="50px"
-                          />
+                          <Skeleton variant="text" width="50px" />
                         </Grid>
                       </Grid>
                     </Grid>
@@ -811,11 +715,7 @@ export const Vehicles: React.FC = () => {
                     justifyContent="center"
                     flexDirection="column"
                   >
-                    <Skeleton
-                      variant="circular"
-                      height="100px"
-                      width="100px"
-                    />
+                    <Skeleton variant="circular" height="100px" width="100px" />
                     <Box sx={{ position: "relative" }}>
                       <Grid
                         container
@@ -839,17 +739,10 @@ export const Vehicles: React.FC = () => {
                         </Grid>
                       </Grid>
                     </Box>
-                    <Skeleton
-                      variant="text"
-                      width="50px"
-                    />
+                    <Skeleton variant="text" width="50px" />
                   </Stack>
 
-                  <Grid
-                    container
-                    spacing={2}
-                    sx={{ paddingX: 0 }}
-                  >
+                  <Grid container spacing={2} sx={{ paddingX: 0 }}>
                     <Grid xs>
                       <Grid container>
                         <Grid xs>
@@ -858,10 +751,7 @@ export const Vehicles: React.FC = () => {
                           </Typography>
                         </Grid>
                         <Grid>
-                          <Skeleton
-                            variant="text"
-                            width="120px"
-                          />
+                          <Skeleton variant="text" width="120px" />
                         </Grid>
                       </Grid>
                       <Grid container>
@@ -871,10 +761,7 @@ export const Vehicles: React.FC = () => {
                           </Typography>
                         </Grid>
                         <Grid>
-                          <Skeleton
-                            variant="text"
-                            width="100px"
-                          />
+                          <Skeleton variant="text" width="100px" />
                         </Grid>
                       </Grid>
                       <Grid container>
@@ -884,10 +771,7 @@ export const Vehicles: React.FC = () => {
                           </Typography>
                         </Grid>
                         <Grid>
-                          <Skeleton
-                            variant="text"
-                            width="80px"
-                          />
+                          <Skeleton variant="text" width="80px" />
                         </Grid>
                       </Grid>
                       <Grid container>
@@ -897,10 +781,7 @@ export const Vehicles: React.FC = () => {
                           </Typography>
                         </Grid>
                         <Grid>
-                          <Skeleton
-                            variant="text"
-                            width="110px"
-                          />
+                          <Skeleton variant="text" width="110px" />
                         </Grid>
                       </Grid>
                       <Grid container>
@@ -910,10 +791,7 @@ export const Vehicles: React.FC = () => {
                           </Typography>
                         </Grid>
                         <Grid>
-                          <Skeleton
-                            variant="text"
-                            width="50px"
-                          />
+                          <Skeleton variant="text" width="50px" />
                         </Grid>
                       </Grid>
                     </Grid>
@@ -951,11 +829,7 @@ export const Vehicles: React.FC = () => {
                     justifyContent="center"
                     flexDirection="column"
                   >
-                    <Skeleton
-                      variant="circular"
-                      height="100px"
-                      width="100px"
-                    />
+                    <Skeleton variant="circular" height="100px" width="100px" />
                     <Box sx={{ position: "relative" }}>
                       <Grid
                         container
@@ -979,17 +853,10 @@ export const Vehicles: React.FC = () => {
                         </Grid>
                       </Grid>
                     </Box>
-                    <Skeleton
-                      variant="text"
-                      width="50px"
-                    />
+                    <Skeleton variant="text" width="50px" />
                   </Stack>
 
-                  <Grid
-                    container
-                    spacing={2}
-                    sx={{ paddingX: 0 }}
-                  >
+                  <Grid container spacing={2} sx={{ paddingX: 0 }}>
                     <Grid xs>
                       <Grid container>
                         <Grid xs>
@@ -998,10 +865,7 @@ export const Vehicles: React.FC = () => {
                           </Typography>
                         </Grid>
                         <Grid>
-                          <Skeleton
-                            variant="text"
-                            width="120px"
-                          />
+                          <Skeleton variant="text" width="120px" />
                         </Grid>
                       </Grid>
                       <Grid container>
@@ -1011,10 +875,7 @@ export const Vehicles: React.FC = () => {
                           </Typography>
                         </Grid>
                         <Grid>
-                          <Skeleton
-                            variant="text"
-                            width="100px"
-                          />
+                          <Skeleton variant="text" width="100px" />
                         </Grid>
                       </Grid>
                       <Grid container>
@@ -1024,10 +885,7 @@ export const Vehicles: React.FC = () => {
                           </Typography>
                         </Grid>
                         <Grid>
-                          <Skeleton
-                            variant="text"
-                            width="80px"
-                          />
+                          <Skeleton variant="text" width="80px" />
                         </Grid>
                       </Grid>
                       <Grid container>
@@ -1037,10 +895,7 @@ export const Vehicles: React.FC = () => {
                           </Typography>
                         </Grid>
                         <Grid>
-                          <Skeleton
-                            variant="text"
-                            width="110px"
-                          />
+                          <Skeleton variant="text" width="110px" />
                         </Grid>
                       </Grid>
                       <Grid container>
@@ -1050,10 +905,7 @@ export const Vehicles: React.FC = () => {
                           </Typography>
                         </Grid>
                         <Grid>
-                          <Skeleton
-                            variant="text"
-                            width="50px"
-                          />
+                          <Skeleton variant="text" width="50px" />
                         </Grid>
                       </Grid>
                     </Grid>

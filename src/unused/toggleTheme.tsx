@@ -30,19 +30,13 @@ const Identifier = () => {
   }, []);
   if (!mounted) {
     return (
-      <Typography
-        component="div"
-        sx={{ fontSize: "lg", opacity: 0 }}
-      >
+      <Typography component="div" sx={{ fontSize: "lg", opacity: 0 }}>
         Calculating…
       </Typography>
     );
   }
   return (
-    <Typography
-      component="div"
-      sx={{ fontSize: "lg" }}
-    >
+    <Typography component="div" sx={{ fontSize: "lg" }}>
       Your system is in{" "}
       <Typography
         variant="outlined"
@@ -66,10 +60,7 @@ type Props = {
 
 export const IdentifySystemMode: React.FC<Props> = ({ children }) => {
   return (
-    <CssVarsProvider
-      theme={theme}
-      modeStorageKey="demo_identify-system-mode"
-    >
+    <CssVarsProvider theme={theme} modeStorageKey="demo_identify-system-mode">
       <Identifier />
       {children}
     </CssVarsProvider>

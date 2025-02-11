@@ -74,22 +74,11 @@ export const Drones: React.FC = () => {
 
   return (
     <Container sx={{ paddingTop: "50px" }}>
-      <Card
-        variant="outlined"
-        sx={{ marginBottom: "30px" }}
-      >
+      <Card variant="outlined" sx={{ marginBottom: "30px" }}>
         <CardContent>
-          <Grid
-            container
-            display="flex"
-            alignItems="center"
-          >
+          <Grid container display="flex" alignItems="center">
             <Grid xs>
-              <Typography
-                marginBottom="5px"
-                level="h2"
-                fontWeight={600}
-              >
+              <Typography marginBottom="5px" level="h2" fontWeight={600}>
                 Drones
               </Typography>
             </Grid>
@@ -112,10 +101,7 @@ export const Drones: React.FC = () => {
                   alignItems="center"
                   key={drone.id}
                 >
-                  <Grid
-                    xs={3}
-                    sx={{ height: "240px" }}
-                  >
+                  <Grid xs={3} sx={{ height: "240px" }}>
                     {homeStation ? (
                       <Card
                         variant="outlined"
@@ -133,10 +119,7 @@ export const Drones: React.FC = () => {
                             alt="Satisfactory Drone Port illustration"
                             style={{ height: "35px", width: "35px" }}
                           />
-                          <Typography
-                            level="h4"
-                            sx={{ marginTop: "10px" }}
-                          >
+                          <Typography level="h4" sx={{ marginTop: "10px" }}>
                             {drone.homeStation}
                           </Typography>
 
@@ -230,10 +213,7 @@ export const Drones: React.FC = () => {
                             alt="Satisfactory Drone Port illustration"
                             style={{ height: "35px", width: "35px" }}
                           />
-                          <Typography
-                            level="h4"
-                            sx={{ marginTop: "10px" }}
-                          >
+                          <Typography level="h4" sx={{ marginTop: "10px" }}>
                             {drone.currentDestination === ""
                               ? "N/A"
                               : drone.currentDestination}
@@ -315,10 +295,7 @@ export const Drones: React.FC = () => {
                     ) : null}
                   </Grid>
 
-                  <Grid
-                    xs={3}
-                    sx={{ height: "240px", position: "relative" }}
-                  >
+                  <Grid xs={3} sx={{ height: "240px", position: "relative" }}>
                     <Card
                       variant="outlined"
                       sx={{
@@ -423,18 +400,12 @@ export const Drones: React.FC = () => {
                       </CardContent>
                     </Card>
                   </Grid>
-                  <Grid
-                    xs={6}
-                    sx={{ height: "240px" }}
-                  >
+                  <Grid xs={6} sx={{ height: "240px" }}>
                     <Grid
                       container
                       sx={{ height: "110px", marginBottom: "40px" }}
                     >
-                      <Grid
-                        xs={6}
-                        sx={{ paddingTop: 0 }}
-                      >
+                      <Grid xs={6} sx={{ paddingTop: 0 }}>
                         <Card
                           variant="outlined"
                           sx={{
@@ -447,10 +418,7 @@ export const Drones: React.FC = () => {
                               size="25px"
                               color="rgba(255,255,255,0.5)"
                             />
-                            <Typography
-                              level="h4"
-                              marginTop="10px"
-                            >
+                            <Typography level="h4" marginTop="10px">
                               {homeStation.averageRoundTrip}
                             </Typography>
                             <Typography level="body-md">
@@ -459,10 +427,7 @@ export const Drones: React.FC = () => {
                           </CardContent>
                         </Card>
                       </Grid>
-                      <Grid
-                        xs={6}
-                        sx={{ paddingTop: 0 }}
-                      >
+                      <Grid xs={6} sx={{ paddingTop: 0 }}>
                         <Card
                           variant="outlined"
                           sx={{
@@ -475,10 +440,7 @@ export const Drones: React.FC = () => {
                               size="25px"
                               color="rgba(255,255,255,0.5)"
                             />
-                            <Typography
-                              level="h4"
-                              marginTop="10px"
-                            >
+                            <Typography level="h4" marginTop="10px">
                               {Math.round(homeStation.latestRoundTrip)} sec
                             </Typography>
                             <Typography level="body-md">
@@ -488,14 +450,8 @@ export const Drones: React.FC = () => {
                         </Card>
                       </Grid>
                     </Grid>
-                    <Grid
-                      container
-                      sx={{ height: "110px" }}
-                    >
-                      <Grid
-                        xs={6}
-                        sx={{ paddingTop: 0 }}
-                      >
+                    <Grid container sx={{ height: "110px" }}>
+                      <Grid xs={6} sx={{ paddingTop: 0 }}>
                         <Card
                           variant="outlined"
                           sx={{
@@ -508,10 +464,7 @@ export const Drones: React.FC = () => {
                               size="25px"
                               color="rgba(255,255,255,0.5)"
                             />
-                            <Typography
-                              level="h4"
-                              marginTop="10px"
-                            >
+                            <Typography level="h4" marginTop="10px">
                               {homeStation.activeFuel.fuelCostRateEstimation.toFixed(
                                 2,
                               )}{" "}
@@ -523,10 +476,7 @@ export const Drones: React.FC = () => {
                           </CardContent>
                         </Card>
                       </Grid>
-                      <Grid
-                        xs={6}
-                        sx={{ paddingTop: 0 }}
-                      >
+                      <Grid xs={6} sx={{ paddingTop: 0 }}>
                         <Card
                           variant="outlined"
                           sx={{
@@ -535,14 +485,8 @@ export const Drones: React.FC = () => {
                           }}
                         >
                           <CardContent>
-                            <BsBox
-                              size="25px"
-                              color="rgba(255,255,255,0.5)"
-                            />
-                            <Typography
-                              level="h4"
-                              marginTop="10px"
-                            >
+                            <BsBox size="25px" color="rgba(255,255,255,0.5)" />
+                            <Typography level="h4" marginTop="10px">
                               {homeStation.totalTransportRateEstimation.toFixed(
                                 2,
                               )}{" "}
@@ -568,10 +512,7 @@ export const Drones: React.FC = () => {
                 alignItems="center"
                 key={drone.id}
               >
-                <Grid
-                  xs={3}
-                  sx={{ height: "240px" }}
-                >
+                <Grid xs={3} sx={{ height: "240px" }}>
                   <Card
                     variant="outlined"
                     sx={{
@@ -606,10 +547,7 @@ export const Drones: React.FC = () => {
                   </Card>
                 </Grid>
 
-                <Grid
-                  xs={3}
-                  sx={{ height: "240px", position: "relative" }}
-                >
+                <Grid xs={3} sx={{ height: "240px", position: "relative" }}>
                   <Card
                     variant="outlined"
                     sx={{
@@ -619,10 +557,7 @@ export const Drones: React.FC = () => {
                     }}
                   >
                     <CardContent>
-                      <Stack
-                        alignItems="center"
-                        sx={{ marginBottom: "15px" }}
-                      >
+                      <Stack alignItems="center" sx={{ marginBottom: "15px" }}>
                         <img
                           src="/assets/Vehicle/Drone.png"
                           alt="Satisfactory Drone illustration"
@@ -714,18 +649,12 @@ export const Drones: React.FC = () => {
                     </CardContent>
                   </Card>
                 </Grid>
-                <Grid
-                  xs={6}
-                  sx={{ height: "240px" }}
-                >
+                <Grid xs={6} sx={{ height: "240px" }}>
                   <Grid
                     container
                     sx={{ height: "110px", marginBottom: "40px" }}
                   >
-                    <Grid
-                      xs={6}
-                      sx={{ paddingTop: 0 }}
-                    >
+                    <Grid xs={6} sx={{ paddingTop: 0 }}>
                       <Card
                         variant="outlined"
                         sx={{
@@ -742,10 +671,7 @@ export const Drones: React.FC = () => {
                         </CardContent>
                       </Card>
                     </Grid>
-                    <Grid
-                      xs={6}
-                      sx={{ paddingTop: 0 }}
-                    >
+                    <Grid xs={6} sx={{ paddingTop: 0 }}>
                       <Card
                         variant="outlined"
                         sx={{
@@ -763,14 +689,8 @@ export const Drones: React.FC = () => {
                       </Card>
                     </Grid>
                   </Grid>
-                  <Grid
-                    container
-                    sx={{ height: "110px" }}
-                  >
-                    <Grid
-                      xs={6}
-                      sx={{ paddingTop: 0 }}
-                    >
+                  <Grid container sx={{ height: "110px" }}>
+                    <Grid xs={6} sx={{ paddingTop: 0 }}>
                       <Card
                         variant="outlined"
                         sx={{
@@ -787,10 +707,7 @@ export const Drones: React.FC = () => {
                         </CardContent>
                       </Card>
                     </Grid>
-                    <Grid
-                      xs={6}
-                      sx={{ paddingTop: 0 }}
-                    >
+                    <Grid xs={6} sx={{ paddingTop: 0 }}>
                       <Card
                         variant="outlined"
                         sx={{
@@ -819,10 +736,7 @@ export const Drones: React.FC = () => {
           spacing={2}
           sx={{ marginBottom: "30px", height: "300px", opacity: 0.5 }}
         >
-          <Grid
-            xs={3}
-            sx={{ height: "240px" }}
-          >
+          <Grid xs={3} sx={{ height: "240px" }}>
             <Card
               variant="outlined"
               sx={{
@@ -847,10 +761,7 @@ export const Drones: React.FC = () => {
                   height="20px"
                 />
 
-                <Skeleton
-                  variant="text"
-                  width="80px"
-                />
+                <Skeleton variant="text" width="80px" />
               </CardContent>
             </Card>
 
@@ -877,37 +788,25 @@ export const Drones: React.FC = () => {
                   height="20px"
                 />
 
-                <Skeleton
-                  variant="text"
-                  width="80px"
-                />
+                <Skeleton variant="text" width="80px" />
               </CardContent>
             </Card>
           </Grid>
 
-          <Grid
-            xs={3}
-            sx={{ height: "240px", position: "relative" }}
-          >
+          <Grid xs={3} sx={{ height: "240px", position: "relative" }}>
             <Card
               variant="outlined"
               sx={{ position: "relative", height: "255px", paddingTop: 0 }}
             >
               <CardContent>
-                <Stack
-                  alignItems="center"
-                  sx={{ marginBottom: "5px" }}
-                >
+                <Stack alignItems="center" sx={{ marginBottom: "5px" }}>
                   <img
                     src="/assets/Vehicle/Drone.png"
                     alt="Satisfactory Drone illustration"
                     style={{ height: "100px" }}
                   />
 
-                  <Skeleton
-                    variant="text"
-                    width="80px"
-                  />
+                  <Skeleton variant="text" width="80px" />
                 </Stack>
 
                 <Grid container>
@@ -917,10 +816,7 @@ export const Drones: React.FC = () => {
                     </Typography>
                   </Grid>
                   <Grid>
-                    <Skeleton
-                      variant="text"
-                      width="100px"
-                    />
+                    <Skeleton variant="text" width="100px" />
                   </Grid>
                 </Grid>
                 <Grid container>
@@ -930,10 +826,7 @@ export const Drones: React.FC = () => {
                     </Typography>
                   </Grid>
                   <Grid>
-                    <Skeleton
-                      variant="text"
-                      width="60px"
-                    />
+                    <Skeleton variant="text" width="60px" />
                   </Grid>
                 </Grid>
                 <Grid container>
@@ -943,27 +836,15 @@ export const Drones: React.FC = () => {
                     </Typography>
                   </Grid>
                   <Grid>
-                    <Skeleton
-                      variant="text"
-                      width="50px"
-                    />
+                    <Skeleton variant="text" width="50px" />
                   </Grid>
                 </Grid>
               </CardContent>
             </Card>
           </Grid>
-          <Grid
-            xs={6}
-            sx={{ height: "240px" }}
-          >
-            <Grid
-              container
-              sx={{ height: "110px", marginBottom: "40px" }}
-            >
-              <Grid
-                xs={6}
-                sx={{ paddingTop: 0 }}
-              >
+          <Grid xs={6} sx={{ height: "240px" }}>
+            <Grid container sx={{ height: "110px", marginBottom: "40px" }}>
+              <Grid xs={6} sx={{ paddingTop: 0 }}>
                 <Card
                   variant="outlined"
                   sx={{
@@ -987,17 +868,11 @@ export const Drones: React.FC = () => {
                       height="20px"
                     />
 
-                    <Skeleton
-                      variant="text"
-                      width="80px"
-                    />
+                    <Skeleton variant="text" width="80px" />
                   </CardContent>
                 </Card>
               </Grid>
-              <Grid
-                xs={6}
-                sx={{ paddingTop: 0 }}
-              >
+              <Grid xs={6} sx={{ paddingTop: 0 }}>
                 <Card
                   variant="outlined"
                   sx={{
@@ -1021,22 +896,13 @@ export const Drones: React.FC = () => {
                       height="20px"
                     />
 
-                    <Skeleton
-                      variant="text"
-                      width="80px"
-                    />
+                    <Skeleton variant="text" width="80px" />
                   </CardContent>
                 </Card>
               </Grid>
             </Grid>
-            <Grid
-              container
-              sx={{ height: "110px" }}
-            >
-              <Grid
-                xs={6}
-                sx={{ paddingTop: 0 }}
-              >
+            <Grid container sx={{ height: "110px" }}>
+              <Grid xs={6} sx={{ paddingTop: 0 }}>
                 <Card
                   variant="outlined"
                   sx={{
@@ -1060,17 +926,11 @@ export const Drones: React.FC = () => {
                       height="20px"
                     />
 
-                    <Skeleton
-                      variant="text"
-                      width="80px"
-                    />
+                    <Skeleton variant="text" width="80px" />
                   </CardContent>
                 </Card>
               </Grid>
-              <Grid
-                xs={6}
-                sx={{ paddingTop: 0 }}
-              >
+              <Grid xs={6} sx={{ paddingTop: 0 }}>
                 <Card
                   variant="outlined"
                   sx={{
@@ -1094,10 +954,7 @@ export const Drones: React.FC = () => {
                       height="20px"
                     />
 
-                    <Skeleton
-                      variant="text"
-                      width="80px"
-                    />
+                    <Skeleton variant="text" width="80px" />
                   </CardContent>
                 </Card>
               </Grid>

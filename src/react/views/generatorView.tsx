@@ -52,22 +52,11 @@ export const DetailedGeneratorView: React.FC = () => {
 
   return (
     <Container sx={{ paddingTop: "50px" }}>
-      <Card
-        variant="outlined"
-        sx={{ marginBottom: "30px" }}
-      >
+      <Card variant="outlined" sx={{ marginBottom: "30px" }}>
         <CardContent>
-          <Grid
-            container
-            display="flex"
-            alignItems="center"
-          >
+          <Grid container display="flex" alignItems="center">
             <Grid xs>
-              <Typography
-                level="h2"
-                marginBottom="5px"
-                fontWeight={600}
-              >
+              <Typography level="h2" marginBottom="5px" fontWeight={600}>
                 {currentGeneratorName}
               </Typography>
             </Grid>
@@ -76,29 +65,16 @@ export const DetailedGeneratorView: React.FC = () => {
       </Card>
 
       {generators ? (
-        <Grid
-          container
-          spacing={3}
-        >
+        <Grid container spacing={3}>
           {generators.map((generator) => {
             return (
-              <Grid
-                xs={4}
-                key={generator.id}
-              >
+              <Grid xs={4} key={generator.id}>
                 <Card variant="outlined">
                   <CardContent>
-                    <Grid
-                      padding={0}
-                      container
-                    >
+                    <Grid padding={0} container>
                       <Grid xs>
                         {generator.isFullSpeed ? (
-                          <Chip
-                            size="sm"
-                            color="success"
-                            variant="soft"
-                          >
+                          <Chip size="sm" color="success" variant="soft">
                             Producing ...
                           </Chip>
                         ) : (
@@ -118,19 +94,11 @@ export const DetailedGeneratorView: React.FC = () => {
                       </Grid>
                       <Grid>
                         {generator.isGeneratorCanStart ? (
-                          <Chip
-                            size="sm"
-                            color="neutral"
-                            variant="soft"
-                          >
+                          <Chip size="sm" color="neutral" variant="soft">
                             Can Start
                           </Chip>
                         ) : (
-                          <Chip
-                            size="sm"
-                            color="danger"
-                            variant="soft"
-                          >
+                          <Chip size="sm" color="danger" variant="soft">
                             Cannot Start!
                           </Chip>
                         )}
@@ -173,11 +141,7 @@ export const DetailedGeneratorView: React.FC = () => {
           })}
         </Grid>
       ) : (
-        <Grid
-          container
-          spacing={3}
-          sx={{ opacity: 0.5 }}
-        >
+        <Grid container spacing={3} sx={{ opacity: 0.5 }}>
           <Grid xs={4}>
             <Card variant="outlined">
               <CardContent>
@@ -207,10 +171,7 @@ export const DetailedGeneratorView: React.FC = () => {
                       <Typography>PRODUCTION</Typography>
                     </Grid>
                     <Grid>
-                      <Skeleton
-                        variant="text"
-                        width="80px"
-                      />
+                      <Skeleton variant="text" width="80px" />
                     </Grid>
                   </Grid>
                   <Skeleton
@@ -219,10 +180,7 @@ export const DetailedGeneratorView: React.FC = () => {
                     height="140px"
                   />
 
-                  <Typography
-                    marginBottom="15px"
-                    marginTop="30px"
-                  >
+                  <Typography marginBottom="15px" marginTop="30px">
                     INGREDIENTS
                   </Typography>
                   <Skeleton
@@ -263,10 +221,7 @@ export const DetailedGeneratorView: React.FC = () => {
                       <Typography>PRODUCTION</Typography>
                     </Grid>
                     <Grid>
-                      <Skeleton
-                        variant="text"
-                        width="80px"
-                      />
+                      <Skeleton variant="text" width="80px" />
                     </Grid>
                   </Grid>
                   <Skeleton
@@ -275,10 +230,7 @@ export const DetailedGeneratorView: React.FC = () => {
                     height="140px"
                   />
 
-                  <Typography
-                    marginBottom="15px"
-                    marginTop="30px"
-                  >
+                  <Typography marginBottom="15px" marginTop="30px">
                     INGREDIENTS
                   </Typography>
                   <Skeleton
@@ -319,10 +271,7 @@ export const DetailedGeneratorView: React.FC = () => {
                       <Typography>PRODUCTION</Typography>
                     </Grid>
                     <Grid>
-                      <Skeleton
-                        variant="text"
-                        width="80px"
-                      />
+                      <Skeleton variant="text" width="80px" />
                     </Grid>
                   </Grid>
                   <Skeleton
@@ -331,10 +280,7 @@ export const DetailedGeneratorView: React.FC = () => {
                     height="140px"
                   />
 
-                  <Typography
-                    marginBottom="15px"
-                    marginTop="30px"
-                  >
+                  <Typography marginBottom="15px" marginTop="30px">
                     INGREDIENTS
                   </Typography>
                   <Skeleton

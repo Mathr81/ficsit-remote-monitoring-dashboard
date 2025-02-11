@@ -27,10 +27,8 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true,
+    "resolveJsonModule": true
   },
   "include": ["src"],
-  "exclude": [
-    "./src/unused/**"
-  ]
+  "exclude": ["./src/unused/**"]
 }

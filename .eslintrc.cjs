@@ -78,7 +78,7 @@ module.exports = {
     ],
     "import/no-unused-modules": [
       "error",
-      { "missingExports ": true, "unusedExports": true },
+      { "missingExports ": true, unusedExports: true },
     ],
     "simple-import-sort/imports": "ignore",
     "simple-import-sort/exports": "error",

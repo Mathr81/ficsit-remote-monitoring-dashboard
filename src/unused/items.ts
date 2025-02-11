@@ -23,16 +23,16 @@ const itemRefs: Record<string, any> = {
   "Copper Ingot": {
     image: "Items/IconDesc_CopperIngot_256.png",
   },
-  "Concrete": {
+  Concrete: {
     image: "Items/IconDesc_Concrete_256.png",
   },
-  "Limestone": {
+  Limestone: {
     image: "Items/Stone_256.png",
   },
   "Iron Rod": {
     image: "Items/IconDesc_IronRods_256.png",
   },
-  "Screw": {
+  Screw: {
     image: "Items/IconDesc_IronScrews_256.png",
   },
   "Iron Plate": {
@@ -41,10 +41,10 @@ const itemRefs: Record<string, any> = {
   "Copper Sheet": {
     image: "Items/IconDesc_CopperSheet_256.png",
   },
-  "Wire": {
+  Wire: {
     image: "Items/IconDesc_Wire_256.png",
   },
-  "Cable": {
+  Cable: {
     image: "Items/IconDesc_Cables_256.png",
   },
   "Steel Beam": {
@@ -56,7 +56,7 @@ const itemRefs: Record<string, any> = {
   "Steel Pipe": {
     image: "Items/IconDesc_SteelPipe_256.png",
   },
-  "Rotor": {
+  Rotor: {
     image: "Items/IconDesc_Rotor_256.png",
   },
   "Reinforced Iron Plate": {
@@ -77,13 +77,13 @@ const itemRefs: Record<string, any> = {
   "Polymer Resin": {
     image: "Items/IconDesc_PolymerResin_256.png",
   },
-  "Water": {
+  Water: {
     image: "Items/LiquidWater_Pipe_256.png",
   },
-  "Fabric": {
+  Fabric: {
     image: "Items/IconDesc_Fabric_256.png",
   },
-  "Fuel": {
+  Fuel: {
     image: "Items/IconDesc_LiquidFuel_Pipe_256.png",
   },
   "Packaged Fuel": {
@@ -101,34 +101,34 @@ const itemRefs: Record<string, any> = {
   "Liquid Biofuel": {
     image: "Items/IconDesc_LiquidBiofuel_Pipe_256.png",
   },
-  "Coal": {
+  Coal: {
     image: "Items/IconDesc_CoalOre_256.png",
   },
   "Compacted Coal": {
     image: "Items/IconDesc_CompactedCoal_256.png",
   },
-  "Turbofuel": {
+  Turbofuel: {
     image: "Items/IconDesc_LiquidTurboFuel_Pipe_256.png",
   },
-  "Bauxite": {
+  Bauxite: {
     image: "Items/IconDesc_Bauxite_256.png",
   },
-  "Silica": {
+  Silica: {
     image: "Items/IconDesc_Silica_256.png",
   },
   "Alumina Solution": {
     image: "Items/LiquidAlumina_Pipe_256.png",
   },
-  "Sulfur": {
+  Sulfur: {
     image: "Items/Sulfur_256.png",
   },
   "Sulfuric Acid": {
     image: "Items/IconDesc_LiquidSulfuricAcid_Pipe_256.png",
   },
-  "Plastic": {
+  Plastic: {
     image: "Items/IconDesc_Plastic_256.png",
   },
-  "Rubber": {
+  Rubber: {
     image: "Items/IconDesc_Rubber_256.png",
   },
   "Raw Quartz": {
@@ -137,7 +137,7 @@ const itemRefs: Record<string, any> = {
   "Quartz Crystal": {
     image: "Items/IconDesc_QuartzResource_256.png",
   },
-  "Quickwire": {
+  Quickwire: {
     image: "Items/IconDesc_Quickwire_256.png",
   },
   "Black Powder": {
@@ -149,7 +149,7 @@ const itemRefs: Record<string, any> = {
   "Encased Industrial Beam": {
     image: "Items/IconDesc_EncasedSteelBeam_256.png",
   },
-  "Uranium": {
+  Uranium: {
     image: "Items/IconDesc_UraniumOre_256.png",
   },
   "Encased Uranium Cell": {
@@ -161,7 +161,7 @@ const itemRefs: Record<string, any> = {
   "Electromagnetic Control Rod": {
     image: "Items/IconDesc_ElectromagneticControlRod_256.png",
   },
-  "Beacon": {
+  Beacon: {
     image: "Items/IconDesc_Beacon_256.png",
   },
   "Crystal Oscillator": {
@@ -182,16 +182,16 @@ const itemRefs: Record<string, any> = {
   "Circuit Board": {
     image: "Items/IconDesc_CircuitBoard_256.png",
   },
-  "Computer": {
+  Computer: {
     image: "Items/IconDesc_Computer_256.png",
   },
   "AI Limiter": {
     image: "Items/IconDesc_AILimiter_256.png",
   },
-  "Supercomputer": {
+  Supercomputer: {
     image: "Items/IconDesc_SuperComputer_256.png",
   },
-  "Battery": {
+  Battery: {
     image: "Items/IconDesc_Battery_256.png",
   },
   "Radio Control Unit": {
@@ -200,10 +200,10 @@ const itemRefs: Record<string, any> = {
   "Aluminum Casing": {
     image: "Items/IconDesc_AluminiumCasing_256.png",
   },
-  "Motor": {
+  Motor: {
     image: "Items/IconDesc_Engine_256.png",
   },
-  "Stator": {
+  Stator: {
     image: "Items/IconDesc_Stator_256.png",
   },
   "Cooling System": {
@@ -254,7 +254,7 @@ const itemRefs: Record<string, any> = {
   "Explosive Rebar": {
     image: "Items/IconDesc_ExpRebar_256.png",
   },
-  "Nobelisk": {
+  Nobelisk: {
     image: "Items/IconDesc_Explosive_256.png",
   },
   "Nuke Nobelisk": {
@@ -293,13 +293,13 @@ const itemRefs: Record<string, any> = {
   "Hog Remains": {
     image: "Items/IconDesc_AlienOrgans_256.png",
   },
-  "Leaves": {
+  Leaves: {
     image: "Items/IconDesc_Leaves_256.png",
   },
-  "Biomass": {
+  Biomass: {
     image: "Items/IconDesc_Biomass_Final_256.png",
   },
-  "Wood": {
+  Wood: {
     image: "Items/IconDesc_Wood_256.png",
   },
   "Flower Petals": {

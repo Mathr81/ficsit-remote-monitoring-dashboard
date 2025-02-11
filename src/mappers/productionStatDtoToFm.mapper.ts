@@ -14,7 +14,9 @@ export const productionStatDtoToFMapper = (
       "GameClassNamesEnum",
     );
 
-    const [prodPerMin, consumptionPerMin] = prodStatDto.ProdPerMin.match(/P: ([\d.]+).*C: ([\d.]+)/)?.slice(1, 3) ?? ['0', '0']
+    const [prodPerMin, consumptionPerMin] = prodStatDto.ProdPerMin.match(
+      /P: ([\d.]+).*C: ([\d.]+)/,
+    )?.slice(1, 3) ?? ["0", "0"];
     const prodMessagePerMinute = `P: ${parseFloat(prodPerMin).toFixed(2)} / min - C: ${parseFloat(consumptionPerMin).toFixed(2)} / min`;
 
     return {
