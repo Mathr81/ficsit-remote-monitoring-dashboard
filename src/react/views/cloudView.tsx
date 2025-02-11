@@ -25,6 +25,10 @@ export const CloudView: React.FC = () => {
         setItems(temp);
     }, [cloudInv]);
 
+    const getItemCleanName = (name: string) => {
+        return name.replace(/_/g, ' ');
+    }
+
     useEffect(() => {
         handlePrepareItems();
     }, [handlePrepareItems]);
@@ -74,7 +78,7 @@ export const CloudView: React.FC = () => {
                                         {gameItemsDictionary[item.className] === undefined && (
                                             <HiOutlineQuestionMarkCircle size="70px" />
                                         )}
-                                        <Typography marginBottom="5px">{item.name}</Typography>
+                                        <Typography marginBottom="5px">{getItemCleanName(item.name)}</Typography>
                                         <Typography level="body-md">
                                             Total: {item.amount}
                                         </Typography>

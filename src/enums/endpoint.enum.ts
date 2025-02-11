@@ -10,6 +10,7 @@ export enum EndpointEnum {
     CONVERTER = 'getConverter',
     DRONE = 'getDrone',
     DRONE_STATION = 'getDroneStation',
+    DROP_POD = 'getDropPod',
     FOUNDRY = 'getFoundry',
     FUEL_GENERATOR = 'getFuelGenerator',
     GEOTHERMAL_GENERATOR = 'getGeothermalGenerator',

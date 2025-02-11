@@ -1,10 +1,12 @@
 import { Box, Card, CardContent, Container, Typography } from '@mui/joy';
-import React from 'react';
+import React, { useState } from 'react';
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 import { useAutoRefetch } from '../../hooks/useAutoRefetch';
 import { EndpointEnum } from '../../enums/endpoint.enum';
 import { PlayerDto } from '../../types/apis/dataTransferObject/playerDto';
 import { PlayerFm } from '../../types/apis/frontModel/playerFm';
+import { DropPodDto } from '../../types/apis/dataTransferObject/dropPodDto';
+import { DropPodFm } from '../../types/apis/frontModel/dropPodFm';
 
 const WORLD_MIN_X = -340000;
 const WORLD_MAX_X = 457200;
@@ -77,7 +79,10 @@ const Controls: React.FC<{ zoomIn: () => void; zoomOut: () => void; resetTransfo
 };
 
 export const Map: React.FC = () => {
+    const [showDropPods, setShowDropPods] = useState<boolean>(false);
+    
     const { data: players } = useAutoRefetch<PlayerDto[], PlayerFm[]>(EndpointEnum.PLAYER);
+    const { data: dropPods } = useAutoRefetch<DropPodDto[], DropPodFm[]>(EndpointEnum.DROP_POD, !showDropPods);
 
     return (
         <Container sx={{ paddingTop: '50px' }}>
@@ -86,6 +91,16 @@ export const Map: React.FC = () => {
                     <Typography level="h2" fontWeight={600}>
                         Players
                     </Typography>
+                    <Box sx={{ marginTop: '10px' }}>
+                        <label>
+                            <input
+                                type="checkbox"
+                                checked={showDropPods}
+                                onChange={(e) => setShowDropPods(e.target.checked)}
+                            />
+                            Show Drop Pods
+                        </label>
+                    </Box>
                 </CardContent>
             </Card>
 
@@ -153,6 +168,35 @@ export const Map: React.FC = () => {
                                                             }
                                                         }}
                                                         title={player.name}
+                                                    />
+                                                );
+                                            })}
+
+                                            {showDropPods && dropPods?.map((dropPod, index) => {
+                                                const podPosition = convertCoordinates(
+                                                    dropPod.location.x,
+                                                    dropPod.location.y
+                                                );
+
+                                                return (
+                                                    <Box
+                                                        key={index}
+                                                        sx={{
+                                                            position: 'absolute',
+                                                            width: 5,
+                                                            height: 5,
+                                                            borderRadius: '50%',
+                                                            backgroundColor: 'blue',
+                                                            border: '0.1rem solid white',
+                                                            transform: 'translate(-50%, -50%)',
+                                                            ...podPosition,
+                                                            '&:hover': {
+                                                                width: 10,
+                                                                height: 10,
+                                                                zIndex: 1
+                                                            }
+                                                        }}
+                                                        title={`Drop Pod ${index}`}
                                                     />
                                                 );
                                             })}

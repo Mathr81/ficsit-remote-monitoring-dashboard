@@ -13,6 +13,7 @@ import { trainStationDtoToFmMapper } from '../mappers/trainStationDtoToFm.mapper
 import { vehicleDtoToFmMapper } from '../mappers/vehicleDtoToFm.mapper';
 import { worldInvDtoToFmMapper } from '../mappers/worldInvDtoToFm.mapper';
 import type { EndPoint } from '../types/endpoint';
+import { dropPodDtoToFmMapper } from '../mappers/dropPodDtoToFm.mapper';
 
 export const endPointDictionary: EndPoint = {
     [EndpointEnum.ASSEMBLER]: factoryDtoToFmMapper,
@@ -26,6 +27,7 @@ export const endPointDictionary: EndPoint = {
     [EndpointEnum.CLOUD_INV]: cloudInvDtoToFmMapper,
     [EndpointEnum.DRONE]: droneDtoToFmMapper,
     [EndpointEnum.DRONE_STATION]: droneStationDtoToFmMapper,
+    [EndpointEnum.DROP_POD]: dropPodDtoToFmMapper,
     [EndpointEnum.FOUNDRY]: factoryDtoToFmMapper,
     [EndpointEnum.FUEL_GENERATOR]: generatorsDtoToFmMapper,
     [EndpointEnum.GEOTHERMAL_GENERATOR]: generatorsDtoToFmMapper,
