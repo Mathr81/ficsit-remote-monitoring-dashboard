@@ -27,11 +27,26 @@ export const useAutoRefetch = <Dto, Fm>(
 
         const fetchData = async () => {
             if (isMounted && !skip && mapper) {
+                const isProduction = import.meta.env.PROD;
+
+                let apiUrl;
+                let endPointPath;
+
+                if (isProduction) {
+                    apiUrl = '/api/proxy';
+                    const targetUrl = `http://${settings.ip}:${settings.port}/${endPoint}`;
+                    endPointPath = `?targetUrl=${encodeURIComponent(targetUrl)}`;
+                } else {
+                    apiUrl = `http://${settings.ip}:${settings.port}`;
+                    endPointPath = `/${endPoint}`;
+                }
+
                 const response = await fetcherHelper<Dto>({
-                    apiUrl: `http://${settings.ip}:${settings.port}`,
-                    endPoint: `/${endPoint}`,
+                    apiUrl: apiUrl,
+                    endPoint: endPointPath,
                     method: FetchMethodsEnum.GET
                 });
+
                 setResponseState({
                     ...response,
                     data: response.data && mapper(response.data)
