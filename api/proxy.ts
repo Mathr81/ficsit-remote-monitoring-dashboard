@@ -9,21 +9,29 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     }
 
     try {
-        // Forward the request to the target URL
         const response = await fetch(targetUrl, {
             method: req.method,
             headers: {
                 'Accept': 'application/json',
             },
-            // Vercel automatically handles body parsing, but we pass it along if it exists
             body: req.body ? JSON.stringify(req.body) : undefined,
         });
 
-        // Get the response from the target server
-        const data = await response.json();
+        const contentType = response.headers.get('content-type');
+        let data;
 
-        // Send the response back to the client
-        res.status(response.status).json(data);
+        if (contentType && contentType.includes('application/json')) {
+            data = await response.json();
+        } else {
+            data = await response.text();
+        }
+
+        // Forward the original headers and status code
+        response.headers.forEach((value, name) => {
+            res.setHeader(name, value);
+        });
+
+        res.status(response.status).send(data);
 
     } catch (error: any) {
         console.error('Proxy error:', error);
