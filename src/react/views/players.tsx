@@ -21,8 +21,8 @@ import { getImageHelper } from '../../helpers/getImage.helper';
 export const Players: React.FC = () => {
     const { data: players } = useAutoRefetch<PlayerDto[], PlayerFm[]>(EndpointEnum.PLAYER);
 
-    const getPlayerName = (id: string) => {
-        return playerMap[id as keyof typeof playerMap] || 'Unknown Player';
+    const getPlayerName = (player: PlayerFm) => {
+        return player.name || playerMap[player.id as keyof typeof playerMap] || 'Unknown Player';
     };
 
     const getTotalInventoryAmount = (inventory: InventoryEntity[] | null | undefined): number => {
@@ -52,7 +52,7 @@ export const Players: React.FC = () => {
                                         <Grid xs>
                                             <Grid container alignItems="center">
                                                 <Typography level="h3" sx={{ marginRight: '12px' }}>
-                                                    {getPlayerName(player.id.toString())}
+                                                    {getPlayerName(player)}
                                                 </Typography>
                                                 <Typography
                                                     level="body-md"
